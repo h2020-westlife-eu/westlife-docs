@@ -63,11 +63,6 @@ In order to test, contribute to source codes and prepare  virtual machine enviro
   * tested on Windows 7 64 bit, vagrant 1.8.6 + VirtualBox 5.1.6, vagrant 1.8.1, 1.8.4 + VirtualBox 5.0.26, note vagrant < 1.8.6 requires VirtualBox 5.0.x, doesn't require VirtualBox extension pack, download from https://www.virtualbox.org/wiki/Download_Old_Builds_5_0
   * tested on  Ubuntu 14.04 LTS, default vagrant 1.4.3 needs to be updated to 1.8.6), default VirtualBox 4.3.36 works
 
-# Technical documentation for Virtual Folder and related features
-Rendered from this sources
-* HTML version: https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/content/
-* PDF version:https://www.gitbook.com/download/pdf/book/h2020-westlife-eu/virtual-folder-docs
-* online editor: https://www.gitbook.com/book/h2020-westlife-eu/virtual-folder-docs/details
 
 
 
