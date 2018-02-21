@@ -27,7 +27,7 @@ cd wp6-vm
 vagrant up
 ```
 
-![](/doc/assets/VMVagrantUp.gif)
+![](/virtualfolder/assets/VMVagrantUp.gif)
 
 This will start VM template, boots to CernVM or Scientific Linux 7 and performs some bootstrap scripts. Depending on network speed it will take several to several tens of minutes - CernVM image (18MB) will need to download additional 200 MB, SL7 image (700 MB) will need to download additional 100 MB. Wait until "BOOTSTRAP FINISHED", otherwise the process failed, investigate the logs.
 

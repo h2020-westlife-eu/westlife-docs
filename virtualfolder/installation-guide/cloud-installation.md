@@ -17,7 +17,7 @@ Both images are small \(18 MB, 23 MB respectively\) containing only CernVM 4 boo
 
 You may download the latest West-life VM in the OVA compatible format from  
 [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm)  
-![](/doc/assets/DownloadAppDB.gif)
+![](/virtualfolder/assets/DownloadAppDB.gif)
 
 Alternatively you may use the RAW image for deployment into OpenStack at [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm)
 
