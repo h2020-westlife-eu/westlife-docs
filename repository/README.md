@@ -5,8 +5,9 @@ Reference implementation of a repository that supplies suitable metadata to the 
 If you don't have vagrant and/or virtualbox, download and install [vagrant tool](https://www.vagrantup.com/downloads.html) and [Virtualbox](https://www.virtualbox.org/wiki/Downloads).
 Tested on Vagrant (1.9.6) and VirtualBox (5.1.30)
 
-
+{% hint style='info' %}
 * (Optionally) Edit the bootstrap.sh file and change values of variables
+{% endhint %}
     SP_IDENTIFICATION=http://local.west-life.eu
 
     SP_ENDPOINT=http://localhost:8080/mellon 
