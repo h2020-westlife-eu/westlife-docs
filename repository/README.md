@@ -7,10 +7,9 @@ Tested on Vagrant (1.9.6) and VirtualBox (5.1.30)
 
 {% hint style='info' %}
 * (Optionally) Edit the bootstrap.sh file and change values of variables
-{% endhint %}
-    SP_IDENTIFICATION=http://local.west-life.eu
 
-    SP_ENDPOINT=http://localhost:8080/mellon 
+     SP_IDENTIFICATION=http://local.west-life.eu
+     SP_ENDPOINT=http://localhost:8080/mellon 
 
 * (Optionally) if you have your sp-metadata,idp-metadata,sp_key and sp_cert file from previous installation, put it next to the VagrantFile - these will be reused instead of generating new one
 
