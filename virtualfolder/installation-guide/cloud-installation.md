@@ -1,6 +1,6 @@
 # Installing Virtual Folder instance into cloud
 
-West-Life VM releases are maintained and distributed via appdb.egi.eu.
+Images to deploy Virtual Folder are maintained and distributed via appdb.egi.eu.
 
 1. [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm) - The standard OVA \(open virtual appliance\) image can be used to deploy West-Life VM into e.g. OpenNebula cloud environment.
 2. [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) - RAW image can be used to deploy West-Life VM into OpenStack cloud environment
