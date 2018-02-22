@@ -1,6 +1,6 @@
-# Development installation
+# Virtual Machines
 
-Prerequisites:
+Various configuration are prepared for development and testing purposes. Prerequisites:
 
  1. Vagrant - tool for automation of virtual machine deployment. 
   1. For MS Windows - Download and install vagrant from https://www.vagrantup.com/  (tested on/recommended version vagrant 1.9.6) 
@@ -27,17 +27,24 @@ cd wp6-vm
 vagrant up
 ```
 
-![](/doc/assets/VMVagrantUp.gif)
+![](/virtualfolder/assets/VMVagrantUp.gif)
 
-After succesfull installation, there should be message 'BOOSTRAP FINISHED, VM prepared to use'.
+This clones special repository with various configuration. After succesfull `vagrant up`, there should be message `BOOSTRAP FINISHED, VM prepared to use`.
 
-After 'vagrant up' has finished, the new virtual machine can be accessed via web browser \(port 8080 is by default forwarded to VM, check VagrantFile or vagrant log for exact port number\)
+The new virtual machine can be accessed via web browser \(port 8080 is by default forwarded to VM, check VagrantFile or vagrant log for exact port number\)
 
 ```
 http://localhost:8080/
 ```
 
-You can access the desktop of the VM by going into VirtualBox.
+You can access the desktop of the VM by going into VirtualBox or you can log into the VM as user vagrant using
+```
+vagrant ssh
+```
+After you finish your work, you can destroy the VM and release resources by: 
+```
+vagrant destroy
+```
 
 ## Detailed instruction
 
