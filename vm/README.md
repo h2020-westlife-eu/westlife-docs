@@ -56,6 +56,7 @@ Download or clone metarepository [ZIP (4kB)](https://github.com/h2020-westlife-e
     cd [wp6-vm directory]/[selected configuration]
 
 These configurations are available:
+###
 - Standalone from Source Codes (default) - based on CernVM 4.0 micro image which boots into Scientific Linux 7. Initial VM image size = 18MB, during boot and bootstrap downloads 658 MB. This is preferred option as CernVM distrtomaibutes most updated SL7 with recent security updates, so either restart or ```cernvm-update -a``` is required occasionally.
 ```
 cd wp6-vm/vf-standalone-src/
