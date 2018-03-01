@@ -6,12 +6,15 @@ If you don't have vagrant and/or virtualbox, download and install [vagrant tool]
 Tested on Vagrant (1.9.6) and VirtualBox (5.1.30)
 
 {% hint style='info' %}
-* (Optionally) Edit the bootstrap.sh file and change values of variables
+(Optionally) In order to integrate with West-Life SSO, you need  your sp-metadata,idp-metadata,sp_key and sp_cert files.
+These are newly generated for each installation. If you have it from previous installation, then put it next to the VagrantFile - these will be reused instead of generating new one
+
+Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
 
      SP_IDENTIFICATION=http://local.west-life.eu
      SP_ENDPOINT=http://localhost:8080/mellon 
 
-* (Optionally) if you have your sp-metadata,idp-metadata,sp_key and sp_cert file from previous installation, put it next to the VagrantFile - these will be reused instead of generating new one
+{% endhint %}
 
 Execute following in your command line:
 
@@ -20,9 +23,4 @@ Execute following in your command line:
     cd wp6-repository
     vagrant up
 
-If new sp-metadata.xml was generated, send it to westlife-aai@ics.muni.cz in order to enable authentication via West-Life AAI. N.B. For the pilot environment we do not require any paper work. 
-
-# Development
-To merge backend with git repository
-
-    git subtree pull --prefix=backend https://github.com/andreagia/spring-wp6
+If new sp-metadata.xml was generated, send it to westlife-aai@ics.muni.cz in order to enable authentication via West-Life AAI. 
