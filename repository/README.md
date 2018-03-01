@@ -24,3 +24,18 @@ Execute following in your command line:
     vagrant up
 
 If new sp-metadata.xml was generated, send it to westlife-aai@ics.muni.cz in order to enable authentication via West-Life AAI. 
+
+After successful finish. The VM is prepared, the port 8080 is automatically forwarded to VM's port 80. 
+To connect to VM using SSH
+    vagrant ssh
+The backend DB is using randomly generated access credentials at  `/etc/westlife/repository.key`
+    
+You may source this file by using
+
+    source /etc/westlife/repository.key
+    
+You may restart the backend service by
+
+    sudo service westlife-repository restart
+    
+
