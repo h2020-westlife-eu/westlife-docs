@@ -6,6 +6,66 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 2. with access code a user within your application can ask for authorization token
 3. with authorization token user can raise calls to obtain his data within Instruct database - currently proposal for research visit in Instruct site.
 
+```uml
+@startuml
+skinparam sequenceArrowThickness 1
+skinparam roundcorner 10
+skinparam maxmessagesize 60
+
+actor User
+box "Your web app at http://[yourweb]" #LightBlue
+  participant "index.html" as index
+  participant "accessToken.php" as php
+end box
+box "ARIA Api at https://structuralbiology.eu/" #LightGreen
+participant "authorize" as authorize
+participant "oauth" as oauth
+participant "oauth/proposallist" as list
+participant "oauth/proposal" as proposal
+end box
+User -> index: get
+activate index
+
+index -> php: generate state
+activate php
+
+php --> index: state
+
+index --> User: link with state
+
+User -> index: click link
+index -> authorize: get access_code
+activate authorize
+authorize --> User: redirect
+deactivate index
+User -> authorize: confirm 
+authorize --> index: redirect
+deactivate authorize
+activate index
+index --> User: access_code
+User -> index: click on import
+index --> php: code and state
+php -> oauth: code and state
+activate oauth
+oauth --> php: access token
+deactivate php
+deactivate oauth
+php --> index: access token
+index -> list: get(access_token)
+activate list
+list --> index: list
+deactivate list
+index --> User: show list
+User -> index: click on proposal
+index --> proposal: get(pid,access_token)
+activate proposal
+proposal --> index: detail
+deactivate proposal
+index --> User: show detail
+
+@enduml
+```
+
 ## Step 1 Obtain access code
 
 Your application is hosted at http://[yourweb]/index.html. And contains e.g. following link which should initiate importing data on user request.
