@@ -185,3 +185,6 @@ As the web app now has the access_token, it can use it to request ARIA directly 
 ...
 
 ```
+
+## Full working code
+Working sample code is in 
