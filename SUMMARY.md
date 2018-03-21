@@ -21,3 +21,6 @@
 * [Repository](repository/README.md)
   * [User's guide](repository/users-guide.md)
   * [Installation guide](repository/installation-guide.md)
+  * [Developer's guide](repository/developers-guide.md)
+    * [ARIA integration](repository/developers-guide/aria-integration.md)
+
