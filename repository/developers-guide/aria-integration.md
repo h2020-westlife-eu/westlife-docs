@@ -10,11 +10,11 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 skinparam sequenceArrowThickness 2
 
 actor User
-box "Your web app at http://[yourweb]" #LightBlue
+box "Repository web app at http://[yourweb]"
   participant "index.html" as index
   participant "accessToken.php" as php
 end box
-box "ARIA Api at https://structuralbiology.eu/" #LightGreen
+box "ARIA API at https://structuralbiology.eu/"
 participant "authorize" as authorize
 participant "oauth" as oauth
 participant "oauth/proposallist" as list
