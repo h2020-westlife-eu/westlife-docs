@@ -2,14 +2,12 @@
 
 Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html)with these modification:
 
-1. your application needs to obtain access code - in order to do that your application authenticates using client\__\_id and secret\_id and randomly generated salt._
-2. with access code a user within your application can ask for authorization token
-3. with authorization token user can raise calls to obtain his data within Instruct database - currently proposal for research visit in Instruct site.
+1. your application needs to obtain access code - first link is generated and subsequently access code is obtained from ARIA. in order to do that your application authenticates using client\__\_id and secret\_id and randomly generated salt._
+2. with access code a user within your application can ask for access token
+3. with access token user can raise calls to obtain his data within Instruct database - currently proposal for research visit in Instruct site.
 
 {% plantuml %}
-skinparam sequenceArrowThickness 1
-skinparam roundcorner 10
-skinparam maxmessagesize 60
+skinparam sequenceArrowThickness 2
 
 actor User
 box "Your web app at http://[yourweb]" #LightBlue
@@ -22,45 +20,51 @@ participant "oauth" as oauth
 participant "oauth/proposallist" as list
 participant "oauth/proposal" as proposal
 end box
-User -> index: get
-activate index
-
-index -> php: generate state
-activate php
-
-php --> index: state
-
-index --> User: link with state
-
-User -> index: click link
-index -> authorize: get access_code
-activate authorize
-authorize --> User: redirect
-deactivate index
-User -> authorize: confirm 
-authorize --> index: redirect
-deactivate authorize
-activate index
-index --> User: access_code
-User -> index: click on import
-index --> php: code and state
-php -> oauth: code and state
-activate oauth
-oauth --> php: access token
-deactivate php
-deactivate oauth
-php --> index: access token
-index -> list: get(access_token)
-activate list
-list --> index: list
-deactivate list
-index --> User: show list
-User -> index: click on proposal
-index --> proposal: get(pid,access_token)
-activate proposal
-proposal --> index: detail
-deactivate proposal
-index --> User: show detail
+group Step 1a. get link with state code
+  User -> index: get
+  activate index
+  index -> php: generate state
+  activate php
+  php --> index: state
+  index --> User: link with state
+end
+group Step 1b. get access_code
+  User -> index: click link
+  index -> authorize: get access_code
+  activate authorize
+  authorize --> User: redirect
+  deactivate index
+  User -> authorize: confirm 
+  authorize --> index: redirect
+  deactivate authorize
+  activate index
+  index --> User: access_code
+end
+group Step 2. get access_token
+  User -> index: click on import
+  index --> php: code and state
+  php -> oauth: code and state
+  activate oauth
+  oauth --> php: access token
+  deactivate oauth
+  php --> index: access token
+  deactivate php
+end
+group Step 3. get list of proposals
+  index -> list: get(access_token)
+  activate list
+  list --> index: list
+  deactivate list
+  index --> User: show list
+end
+group Step 4. get proposal detail
+  User -> index: click on proposal
+  index --> proposal: get(pid,access_token)
+  activate proposal
+  proposal --> index: detail
+  deactivate proposal
+  index --> User: show detail
+end
 {% endplantuml %}
 
 ## Step 1 Obtain access code
