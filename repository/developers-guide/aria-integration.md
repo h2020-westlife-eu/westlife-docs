@@ -254,7 +254,6 @@ To get user's proposallist and proposal details:
 Note, the HTTP GET request is used to obtain the proposallist
 {% endhint %}
 
-
 ## Step 5 Get Proposal list
 `index.js`
 ```javascript
