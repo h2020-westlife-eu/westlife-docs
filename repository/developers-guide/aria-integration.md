@@ -10,7 +10,7 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 
 {% plantuml %}
 skinparam sequenceArrowThickness 2
-skinparam roundcorner 20
+skinparam roundcorner 5
 
 actor User
 box "Repository web app at http://[yourweb]" #WhiteSmoke
