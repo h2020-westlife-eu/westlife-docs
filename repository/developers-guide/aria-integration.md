@@ -8,13 +8,14 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 
 {% plantuml %}
 skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
 
 actor User
-box "Repository web app at http://[yourweb]"
+box "Repository web app at http://[yourweb]" #WhiteSmoke
   participant "index.html" as index
   participant "accessToken.php" as php
 end box
-box "ARIA API at https://structuralbiology.eu/"
+box "ARIA API at https://structuralbiology.eu/" #Ivory
 participant "authorize" as authorize
 participant "oauth" as oauth
 participant "oauth/proposallist" as list
