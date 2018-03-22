@@ -1,6 +1,6 @@
 # ARIA integration
 
-Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html) using these steps:
+Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html) with slight modification using these steps:
 
 1. your application needs first generate special link with encrypted client_id and secret_id
 2. when user clicks the link, first it is redirected to Instuct site to authenticate and authorize access to the Repository web app. When redirected back, it is redirected with access code and state in url parameters.
