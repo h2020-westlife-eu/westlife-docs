@@ -7,7 +7,6 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 3. with authorization token user can raise calls to obtain his data within Instruct database - currently proposal for research visit in Instruct site.
 
 ```uml
-
 @startuml
 skinparam sequenceArrowThickness 1
 skinparam roundcorner 10
