@@ -249,11 +249,12 @@ To get user's proposallist and proposal details:
         .then(data => { return data })
       }
 ...
+```
 {% hint style='info' %}
 Note, the HTTP GET request is used to obtain the proposallist
 {% endhint %}
 
-```
+
 ## Step 5 Get Proposal list
 `index.js`
 ```javascript
