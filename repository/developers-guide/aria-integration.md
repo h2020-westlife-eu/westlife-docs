@@ -166,21 +166,15 @@ The parameters `code` and `state` are used to obtain access token from ARIA prox
       ...
   }
 ```
+{% hint style='info' %}
+PHP7 does not allow credentials in the body of a request. Thus client id and secret is sent as HTTP headers `curl_setopt( $ch, CURLOPT_USERPWD, $client_id .':'. $client_secret );`.
+{% endhint %}
+
 `accessToken.php part 2`
 ```php
 ...
 if(isset($_GET['code']) && isset($_GET['state'])){
-  $code = $_GET['code'];
-  $state = $_GET['state'];
-
-  // quickly sanitize input
-  if(!preg_match('/[A-Za-z0-9]+/', $code))
-    exit('Authentication code invalid');
-  if(!preg_match('/[A-Za-z0-9]+/', $state))
-    exit('State is invalid');
-  // verify the state before continuing on
-  if($state != $_SESSION['OAstate'])
-    exit('State is invalid: state:'.$state.' oastate:'.$_SESSION['OAstate']);
+...
   // manually build OAuth packet - this can be replaced for an off-shelf solution
   $OApacket = array(
     'grant_type' => 'authorization_code',
@@ -188,25 +182,13 @@ if(isset($_GET['code']) && isset($_GET['state'])){
   );
   // start curl connection
   $ch = curl_init();
-  curl_setopt( $ch, CURLOPT_URL, $OAservice.'token' );
-  curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
-  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-  curl_setopt( $ch, CURLOPT_AUTOREFERER, true );
-  //TODO VERIFYPEER,true fails on SL7
-  curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-  curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0 );
-  curl_setopt( $ch, CURLOPT_CAINFO, "cacert.pem" ) ;
-  curl_setopt( $ch, CURLOPT_MAXREDIRS, 10 );
+  ...
   // add OAuth packet and define HTTP POST
   curl_setopt( $ch, CURLOPT_POST, true );
   curl_setopt( $ch, CURLOPT_POSTFIELDS, http_build_query($OApacket) );
   curl_setopt( $ch, CURLOPT_USERPWD, $client_id .':'. $client_secret );
   // run curl and capture output
-  if(!$content = curl_exec( $ch )) {
-    error_log("error occured errno:".curl_errno($ch));
-    error_log(curl_error($ch));
-    header("Status: 404 Not Found"); //TODO return HTTP 404 403
-    echo('error:'.curl_error($ch));
+  if(!$content = curl_exec( $ch )) { ...
     exit('Could not fetch access token');
   }
   curl_close ( $ch );
