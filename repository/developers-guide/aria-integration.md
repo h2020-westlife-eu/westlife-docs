@@ -1,7 +1,12 @@
 # ARIA integration
 
-Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html) with slight modification using these steps:
+Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html) 
+{% hint style='info' %}
+with slight modification explained in this type of info box
+{% endhint %}
 
+
+The following steps needs to be performed in order to get proposals from ARIA database:
 1. your application needs first generate special link with encrypted client_id and secret_id
 2. when user clicks the link, first it is redirected to Instuct site to authenticate and authorize access to the Repository web app. When redirected back, it is redirected with access code and state in url parameters.
 3. with access code, web application requests access token.
