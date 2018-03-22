@@ -2,9 +2,11 @@
 
 Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html)with these modification:
 
-1. your application needs to obtain access code - first link is generated and subsequently access code is obtained from ARIA. in order to do that your application authenticates using client\__\_id and secret\_id and randomly generated salt._
-2. with access code a user within your application can ask for access token
-3. with access token user can raise calls to obtain his data within Instruct database - currently proposal for research visit in Instruct site.
+1. your application needs first generate special link with encrypted client_id and secret_id
+2. when user clicks the link, first it is redirected to Instuct site to authenticate and authorize access to the Repository web app. When redirected back, it is redirected with access code and state in url parameters.
+3. with access code, web application requests access token.
+4. with access token, web application requests list of proposals
+5. user can initiate to request proposal detail, it is obtained using access token and proposal ID (pid).
 
 {% plantuml %}
 skinparam sequenceArrowThickness 2
@@ -21,7 +23,7 @@ participant "oauth" as oauth
 participant "oauth/proposallist" as list
 participant "oauth/proposal" as proposal
 end box
-group Step 1a. get link with state code
+group Step 1. get link with state code
   User -> index: get
   activate index
   index -> php: generate state
@@ -29,7 +31,7 @@ group Step 1a. get link with state code
   php --> index: state
   index --> User: link with state
 end
-group Step 1b. get access_code
+group Step 2. get access_code
   User -> index: click link
   index -> authorize: get access_code
   activate authorize
@@ -38,12 +40,11 @@ group Step 1b. get access_code
   User -> authorize: confirm 
   authorize --> index: redirect
   deactivate authorize
+end
+group Step 3. get access_token
   activate index
   index --> User: access_code
-end
-group Step 2. get access_token
-  User -> index: click on import
-  index --> php: code and state
+  index -> php: code and state
   php -> oauth: code and state
   activate oauth
   oauth --> php: access token
@@ -51,14 +52,14 @@ group Step 2. get access_token
   php --> index: access token
   deactivate php
 end
-group Step 3. get list of proposals
+group Step 4. get list of proposals
   index -> list: get(access_token)
   activate list
   list --> index: list
   deactivate list
   index --> User: show list
 end
-group Step 4. get proposal detail
+group Step 5. get proposal detail
   User -> index: click on proposal
   index --> proposal: get(pid,access_token)
   activate proposal
@@ -68,7 +69,7 @@ group Step 4. get proposal detail
 end
 {% endplantuml %}
 
-## Step 1 Obtain access code
+## Step 1 Obtain link 
 
 Your application is hosted at http://[yourweb]/index.html. And contains e.g. following link which should initiate importing data on user request.
 
@@ -91,7 +92,7 @@ The link is empty and needs to be filled, e.g. using the Fetch API:
       })
       ...
 ```
-In order not to reveal client_id and client_secret, the following code reside on server/backend side of your application at http:[yourweb]/accessToken.php: 
+In order not to reveal `client_id`and `client_secret`, the following code reside on server/backend side only of your application at http:[yourweb]/accessToken.php: 
 
 `accessToken.php part 1`:
 
@@ -127,9 +128,9 @@ This returns link which can be bind to the HTML by your preffered Javascript fra
 <a href="http://structuralbiology.eu/authorize?client_id=123&state=456&response_type=code">Import data</a>
 ...
 ```
-## Step 2 Obtain Access Token
-When the link is clicked by the user, it redirects to Instruct site and user is asked to authorize access to his data to your aplication at [yourweb]. If succesfull, Instruct site will redirect user's browser back to your web using some params in URL, e.g. http://[yourweb]/index.html?code=789&state=012
-Therefore your web application needs detect this state by following snippet
+## Step 2 Obtain Access Code
+When the link is clicked by the user, it redirects to Instruct site and user is asked to authorize access to his data to your aplication at [yourweb]. If succesfull, Instruct site will redirect user's browser back to your web using parameters in URL, e.g. http://[yourweb]/index.html?code=789&state=012
+Therefore your web application needs to detect parameters in url, e.g. by following code
 `index.js`
 ```javascript
 //
@@ -151,7 +152,9 @@ const getParams = query => {
     if (this.params.code && this.params.state)
       this.ariaapi.getAccessToken(this.params.code,this.params.state);
 ```
-Then the parameters `code` and `state` are used to obtain access token from ARIA proxied by the `accessToken.php` service 
+## Step 3 Obtain Access Token
+
+The parameters `code` and `state` are used to obtain access token from ARIA proxied by the `accessToken.php` service 
 `ariaapi.js`
 ```javascript
   getAccessToken(code,state){
@@ -229,7 +232,7 @@ if(isset($_GET['code']) && isset($_GET['state'])){
 ...
 ?>
 ```
-## Step 3 Get Data
+## Step 4 Get Proposal list
 As the web app now has the access_token, it can use it to request ARIA directly (not via accessToken.php) to get user's proposallist and proposal details:
 `index.js`
 ```javascript
@@ -247,6 +250,25 @@ As the web app now has the access_token, it can use it to request ARIA directly 
 ...
 
 ```
+## Step 5 Get Proposal list
+`index.js`
+```javascript
+ this.ariaapi.getProposal(pid,accesstoken).then(list =>{ //show list})
+ ```
+ `ariaapi.js`
+ ```javascript
+ ...
+   getProposal(pid,accesstoken) {
+      return this.httpclient.fetch("https://www.structuralbiology.eu/ws/oauth/proposal?pid="+ pid+"&access_token="
+      +accesstoken.access_token)
+        .then(response => response.json())
+        .then(data => { return data })
+      }
+...
+
+```
 
 ## Full working code
-Working sample code is in 
+Working sample code is in [github.com/h2020-westlife-eu/wp6-repository/tree/master/frontend](https://github.com/h2020-westlife-eu/wp6-repository/tree/master/frontend)
+
+
