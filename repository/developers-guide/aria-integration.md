@@ -11,7 +11,8 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 {% plantuml %}
 skinparam sequenceArrowThickness 2
 skinparam roundcorner 5
-skinparam shadowing false
+skinparam BoxPadding 10
+skinparam SequenceGroupBodyBackgroundColor transparent
 
 actor User
 box "Repository web app at http://[yourweb]" #WhiteSmoke
