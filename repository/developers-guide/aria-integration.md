@@ -1,6 +1,6 @@
 # ARIA integration
 
-Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html)with these modification:
+Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](http://aria.structuralbiology.eu/docs.html) using these steps:
 
 1. your application needs first generate special link with encrypted client_id and secret_id
 2. when user clicks the link, first it is redirected to Instuct site to authenticate and authorize access to the Repository web app. When redirected back, it is redirected with access code and state in url parameters.
@@ -233,7 +233,8 @@ if(isset($_GET['code']) && isset($_GET['state'])){
 ?>
 ```
 ## Step 4 Get Proposal list
-As the web app now has the access_token, it can use it to request ARIA directly (not via accessToken.php) to get user's proposallist and proposal details:
+As the web app now has the access_token, it can use it to request ARIA directly (not via accessToken.php).
+To get user's proposallist and proposal details:
 `index.js`
 ```javascript
  this.ariaapi.getProposalList(accesstoken).then(list =>{ //show list})
@@ -248,6 +249,9 @@ As the web app now has the access_token, it can use it to request ARIA directly 
         .then(data => { return data })
       }
 ...
+{% hint style='info' %}
+Note, the HTTP GET request is used to obtain the proposallist
+{% endhint %}
 
 ```
 ## Step 5 Get Proposal list
@@ -267,6 +271,10 @@ As the web app now has the access_token, it can use it to request ARIA directly 
 ...
 
 ```
+{% hint style='info' %}
+Note, the HTTP GET request is used to obtain the proposal detail
+{% endhint %}
+
 
 ## Full working code
 Working sample code is in [github.com/h2020-westlife-eu/wp6-repository/tree/master/frontend](https://github.com/h2020-westlife-eu/wp6-repository/tree/master/frontend)
