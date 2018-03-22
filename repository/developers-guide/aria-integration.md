@@ -6,8 +6,7 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 2. with access code a user within your application can ask for authorization token
 3. with authorization token user can raise calls to obtain his data within Instruct database - currently proposal for research visit in Instruct site.
 
-```uml
-@startuml
+{% plantuml %}
 skinparam sequenceArrowThickness 1
 skinparam roundcorner 10
 skinparam maxmessagesize 60
@@ -62,9 +61,7 @@ activate proposal
 proposal --> index: detail
 deactivate proposal
 index --> User: show detail
-
-@enduml
-```
+{% endplantuml %}
 
 ## Step 1 Obtain access code
 
