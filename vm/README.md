@@ -4,13 +4,13 @@ The repository https://github.com/h2020-westlife-eu/wp6-vm.git
  contains various configuration for development and testing purposes. Prerequisites:
 
  1. Vagrant - tool for automation of virtual machine deployment. 
-  1. For MS Windows - Download and install vagrant from https://www.vagrantup.com/  (tested on/recommended version vagrant 1.9.6) 
+  1. For MS Windows - Download and install vagrant from https://www.vagrantup.com/  (tested on/recommended version vagrant 1.9.6, vagrant 2.0.3 on Windows requires updated Powershell, e.g. via Windows Management Framework WMF 5.1 https://www.microsoft.com/en-us/download/details.aspx?id=54616) 
   2. For Linux - use prefered package management
      1. Ubuntu:```apt install vagrant```
      2. Centos(RHEL):```yum install vagrant```
  2. Virtualbox - VM stack. 
    1. For MS Windows - Download and install virtualbox https://www.virtualbox.org/wiki/Downloads
- (tested on/recommended version Virtualbox 5.1.22)
+ (tested on/recommended version Virtualbox 5.1.22, for vagrant 2.0.3 tested on VirtualBox 5.2.8)
    2. For Linux - use preferred package management. 
       1. Ubuntu: ```apt install virtualbox```
       2. Centos(RHEL): ```yum install virtualbox```
@@ -58,20 +58,20 @@ Download or clone metarepository [ZIP (4kB)](https://github.com/h2020-westlife-e
 These configurations are available:
 ### Standalone from Source Codes (default)
 This is based on CernVM 4.0 micro image which boots into Scientific Linux 7. Initial VM image size = 18MB, during boot and bootstrap downloads 658 MB. This is preferred option as CernVM distrtomaibutes most updated SL7 with recent security updates, so either restart or ```cernvm-update -a``` is required occasionally.
-```
+```bash
 cd wp6-vm/vf-standalone-src/
 vagrant up
 ```
 
 ### Standalone from Binaries (distributed via cvmfs).
 The same as above - but Virtual Folder is not compiled from sources -boots from `\cvmfs\`. This option is faster, the last stable release is distributed.
-```
+```bash
 cd wp6-vm/vf-standalone-bin/
 vagrant up
 ```
 
-### Standalone from Source Codes 
-It is based on clean Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. Recommended for preparing off-line deployment.
+### Standalone from Source Codes on Scientific Linux 7 (~RHEL 7) 
+It is based on minimal Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. Recommended for preparing off-line deployment.
 ```
 cd wp6-vm/vf-standalone-src-sl7/
 vagrant up
