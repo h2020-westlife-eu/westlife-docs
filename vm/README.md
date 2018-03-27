@@ -1,6 +1,7 @@
 # Virtual Machines
 
-Various configuration are prepared for development and testing purposes. Prerequisites:
+The repository https://github.com/h2020-westlife-eu/wp6-vm.git
+ contains various configuration for development and testing purposes. Prerequisites:
 
  1. Vagrant - tool for automation of virtual machine deployment. 
   1. For MS Windows - Download and install vagrant from https://www.vagrantup.com/  (tested on/recommended version vagrant 1.9.6) 
@@ -22,21 +23,20 @@ Brief instructions are:
 ```
 git clone https://github.com/h2020-westlife-eu/wp6-vm.git
 
-cd wp6-vm
+cd wp6-vm/[selected_config]
 
 vagrant up
 ```
 
 ![](/virtualfolder/assets/VMVagrantUp.gif)
 
-This clones special repository with various configuration. After succesfull `vagrant up`, there should be message `BOOSTRAP FINISHED, VM prepared to use`.
+This clones special repository with various configuration. After succesfull `vagrant up`, there should be message `BOOSTRAP FINISHED, VM prepared to use` or similar, read the docs specific to the software/service.
 
-The new virtual machine can be accessed via web browser \(port 8080 is by default forwarded to VM, check VagrantFile or vagrant log for exact port number\)
+If the application in virtual machine provides web application, you can access it with web browser using port 8080\(check VagrantFile or vagrant log for exact port number being forwarded\)
 
 ```
 http://localhost:8080/
 ```
-
 You can access the desktop of the VM by going into VirtualBox or you can log into the VM as user vagrant using
 ```
 vagrant ssh
@@ -56,50 +56,56 @@ Download or clone metarepository [ZIP (4kB)](https://github.com/h2020-westlife-e
     cd [wp6-vm directory]/[selected configuration]
 
 These configurations are available:
-###
-- Standalone from Source Codes (default) - based on CernVM 4.0 micro image which boots into Scientific Linux 7. Initial VM image size = 18MB, during boot and bootstrap downloads 658 MB. This is preferred option as CernVM distrtomaibutes most updated SL7 with recent security updates, so either restart or ```cernvm-update -a``` is required occasionally.
+### Standalone from Source Codes (default)
+This is based on CernVM 4.0 micro image which boots into Scientific Linux 7. Initial VM image size = 18MB, during boot and bootstrap downloads 658 MB. This is preferred option as CernVM distrtomaibutes most updated SL7 with recent security updates, so either restart or ```cernvm-update -a``` is required occasionally.
 ```
 cd wp6-vm/vf-standalone-src/
-    OR
-cd wp6-vm
+vagrant up
 ```
 
-- Standalone from Binaries (distributed via cvmfs). The same as above - but Virtual Folder is not compiled from sources -boots from cvmfs as well. This option is faster, the last stable release is distributed.
+### Standalone from Binaries (distributed via cvmfs).
+The same as above - but Virtual Folder is not compiled from sources -boots from `\cvmfs\`. This option is faster, the last stable release is distributed.
 ```
 cd wp6-vm/vf-standalone-bin/
+vagrant up
 ```
 
-- Standalone from Source Codes - based on clean Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. Recommended for preparing off-line deployment.
+### Standalone from Source Codes 
+It is based on clean Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. Recommended for preparing off-line deployment.
 ```
 cd wp6-vm/vf-standalone-src-sl7/
+vagrant up
 ```
 
-- Test configurations - currently in testing stage, not guaranted to be working.
+### Test configurations 
+These are currently in testing stage, not guaranted to be working.
 ```
 cd wp6-vm/test-...
+vagrant up
 ```
-    
-**2.** (Optionally), if you have used west-life VM before, you may remove previous VM by and update the vagrant box cache
+### Base box update
+Optionally, if you have used west-life VM before, you may remove previous VM and update the vagrant box cache
 
     vagrant destroy
     vagrant box update    
         
 
-**3.** (Optionally), the master branch from sources are cloned, to change it, edit the bootstrapsources.sh file and uncomment/edit the following three lines (change 'dev' with a desired git branch):
+### Deploy development branch
+By default, the master branch from sources are cloned into VM and VM is booted. To change it, edit the bootstrapsources.sh file and uncomment/edit the following three lines (change 'dev' with a desired git branch):
 
     # optional switch to branch
     cd west-life-wp6
     git checkout dev
     cd ..
-**4.** (Optionally), by default, virtualfolder in VM will contain single user environment. To enable multiuser environment with VRE, edit bootstrapsources.sh file and uncomment the following line. Default user for VF will then be vagrant/vagrant:
+### Virtual Folder enable multiuser environment
+By default, Virtualfolder in VM will contain single user environment - no login is required. To enable multiuser environment with VRE, edit bootstrapsources.sh file and uncomment the following line. Default user for VF will then be vagrant/vagrant:
 
     export PORTAL_DEPLOYMENT=1  
 
-**5.** Start the vagrant box:
-
-    vagrant up    
-
-This will start VM template, boots to Scientific Linux 7 and performs some bootstrap scripts. Depending on network speed it will take several to several tens of minutes - CernVM image (18MB) will need to download additional 200 MB, SL7 image (700 MB) will need to download additional 100 MB. Wait until "BOOTSTRAP FINISHED", otherwise the process failed, investigate the logs.
+### Base Box 
+The following base boxes are used: 
+- Scientific Linux 7 with minimal GUI (~600MB), some additional packages are downloaded during bootstrap. Bootstrap takes about 4 mins.
+- CernVM 4  (~18MB), after boot it will download additional 200-300 MB.
 
 ## Usage
 
