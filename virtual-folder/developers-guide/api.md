@@ -2,7 +2,7 @@
 
 {% api-method method="get" host="https://\[virtual folder server\]" path="/metadataservice/files" %}
 {% api-method-summary %}
-Get Files
+Get Providers
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -17,27 +17,67 @@ This endpoint allows you to get root directory structure consiting of registered
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Root directory structure succesfully retrieved.
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-    "name": "Cake's name",
-    "recipe": "Cake's recipe name",
-    "cake": "Binary cake"
-}
+[{
+    "Id": "2",
+    "alias": "b2drop",
+    "type": "B2Drop",
+    "username": "myusername",
+    "output": "debugging output in case of error"
+}]
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+Not logged. A session needs to be authorized by loging - valid cookie is set by previous "login" dialog process.
 {% endapi-method-response-example-description %}
 
 ```javascript
-{
-    "message": "Ain't no cake like that."
-}
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="https://\[virtual folder server\]" path="/metadataservice/files/\[provider\]" %}
+{% api-method-summary %}
+Get Files from provider
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Get files from selected provider
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="provider" type="string" required=true %}
+provider name
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+[{"name":"directory1",
+  "attributes":16,
+  "size":0,
+  "date":"/Date(1488898207000+0000)/",
+  "path":"",
+  "filetype":15,
+  "webdavuri":"/webdav/tomas.kulhanek@stfc.ac.uk/b2drop/Physiolibrary.models",
+  "publicwebdavuri":""}
+]
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
