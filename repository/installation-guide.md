@@ -39,22 +39,20 @@ Execute following in your command line:
 ```text
 git clone https://github.com/h2020-westlife-eu/wp6-repository.git
 cd wp6-repository
+# (optionally unzip sp files from westlife sso and clientIds from ARIA) 
+# unzip westlifespfiles.zip
 vagrant up
 ```
 
 If new sp-metadata.xml was generated, send it to westlife-aai@ics.muni.cz in order to enable authentication via West-Life AAI.
 
-After successful finish. The VM is prepared, the port 8080 is automatically forwarded to VM's port 80. To connect to VM using SSH vagrant ssh The backend DB is using randomly generated access credentials at `/etc/westlife/repository.key`
+After successful finish. The VM is prepared, the port 8080 is automatically forwarded to VM's port 80. To connect to VM using SSH 
 
-You may source this file by using
+`vagrant ssh `
 
-```text
-source /etc/westlife/repository.key
-```
+The backend DB is using randomly generated access credentials at `/etc/westlife/repository.key`
 
-You may restart the backend service by
+You may source this file by using `source /etc/westlife/repository.key`
 
-```text
-sudo service westlife-repository restart
-```
+You may restart the backend service by `service westlife-repository restart`
 
