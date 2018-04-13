@@ -17,7 +17,9 @@
   * [Developer's guide](virtual-folder/developers-guide/README.md)
     * [Backend](virtual-folder/developers-guide/backend.md)
     * [Frontend - Web Application](virtual-folder/developers-guide/frontend-web-application.md)
-    * [Metadata and API](virtual-folder/developers-guide/metadata-and-api.md)
+    * [Metadata and API](virtual-folder/developers-guide/metadata-and-api/README.md)
+      * Dataset metadata and API
+      * File metadata and API
     * [Dataset metadata and API](virtual-folder/developers-guide/dataset-metadata-and-api.md)
     * [File metadata and API](virtual-folder/developers-guide/api.md)
 * [Virtual Machines](virtual-machines.md)
