@@ -1,4 +1,4 @@
-# API
+# File metadata and API
 
 {% api-method method="get" host="https://\[virtual folder server\]" path="/metadataservice/files" %}
 {% api-method-summary %}
