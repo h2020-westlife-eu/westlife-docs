@@ -84,5 +84,35 @@ provider name
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="https://\[virtual folder server\]" path="/metadataservice/dataset/{id}" %}
+{% api-method-summary %}
+Get dataset
+{% endapi-method-summary %}
 
+{% api-method-description %}
+Get datasets registered within user account
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="number" %}
+id of existing dataset
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{"Id"": 1,"Name":"dataset 1","Entries":[{"Id":1,"Type":"pdb_id","Name":"2hhd"}]}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
