@@ -1,4 +1,5 @@
 # Table of contents
+
 * [Introduction](README.md)
 * [Virtual Folder](virtual-folder/README.md)
   * [User's guide](virtual-folder/users-guide/README.md)
@@ -18,10 +19,11 @@
     * [Frontend - Web Application](virtual-folder/developers-guide/frontend-web-application.md)
     * [Metadata and API](virtual-folder/developers-guide/metadata-and-api/README.md)
       * [Dataset metadata and API](virtual-folder/developers-guide/metadata-and-api/dataset-metadata-and-api.md)
-      * [File metadata and API](virtual-folder/developers-guide/metadata-and-api/file-metadata-and-api.md)
+      * File metadata and API
 * [Virtual Machines](virtual-machines.md)
 * [Repository](repository/README.md)
   * [Installation guide](repository/installation-guide.md)
   * [User's guide](repository/users-guide.md)
   * [Developer's guide](repository/developers-guide/README.md)
     * [ARIA integration](repository/developers-guide/aria-integration.md)
+
