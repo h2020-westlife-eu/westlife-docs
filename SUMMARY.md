@@ -17,6 +17,7 @@
   * [Developer's guide](virtual-folder/developers-guide/README.md)
     * [Backend](virtual-folder/developers-guide/backend.md)
     * [Frontend - Web Application](virtual-folder/developers-guide/frontend-web-application.md)
+    * [API](virtual-folder/developers-guide/api.md)
 * [Virtual Machines](virtual-machines.md)
 * [Repository](repository/README.md)
   * [Installation guide](repository/installation-guide.md)
