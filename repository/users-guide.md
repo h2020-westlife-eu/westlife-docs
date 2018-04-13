@@ -1,3 +1,4 @@
-# User's guide \[Draft\]
+# User's guide
 
 The Repository user's guide
+

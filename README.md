@@ -1,4 +1,4 @@
-# West-Life Virtual Research Environment
+# Introduction
 
 This documentation contains administrator, user's and developer's guide of several products produced by H2020 West-Life project.
 
@@ -10,9 +10,7 @@ Documentation is rendered as
 
 The following products are covered:
 
-* [Virtual Folder](virtualfolder/README.md) provides a unified access mechanism to files stored in a variety of locations including the local file system, and B2DROP and other cloud storage facilities. 
-* [Virtual Machines](vm/README.md) Various images and configuration are prepared for production, development and testing purposes.
-* [Repository](repository/README.md) provides exemplar implementation of data management withing small facility who'd like to have web app support for data life cycle.
-
-
+* [Virtual Folder](virtual-folder/) provides a unified access mechanism to files stored in a variety of locations including the local file system, and B2DROP and other cloud storage facilities. 
+* [Virtual Machines](virtual-machines.md) Various images and configuration are prepared for production, development and testing purposes.
+* [Repository](repository/) provides exemplar implementation of data management withing small facility who'd like to have web app support for data life cycle.
 
