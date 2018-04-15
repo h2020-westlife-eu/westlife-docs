@@ -19,7 +19,7 @@
     * [Frontend - Web Application](virtual-folder/developers-guide/frontend-web-application.md)
     * [Metadata and API](virtual-folder/developers-guide/metadata-and-api/README.md)
       * [Dataset metadata and API](virtual-folder/developers-guide/metadata-and-api/dataset-metadata-and-api.md)
-      * File metadata and API
+      * [File metadata and API](virtual-folder/developers-guide/metadata-and-api/file-metadata-and-api.md)
 * [Virtual Machines](virtual-machines.md)
 * [Repository](repository/README.md)
   * [Installation guide](repository/installation-guide.md)
