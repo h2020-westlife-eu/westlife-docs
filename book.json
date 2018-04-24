@@ -1,3 +1,4 @@
 {
-    "plugins": ["hints","puml"]
+    "plugins": ["hints","puml","api"],
+    "pdf": { "fontSize":19 } 
 }
