@@ -1,6 +1,6 @@
 # Installation guide
 
-## From source codes
+## Automatic deployment from source codes
 
 [Vagrant tool](https://www.vagrantup.com/downloads.html) and [Virtualbox](https://www.virtualbox.org/wiki/Downloads) is required for installing Repository from source codes. Tested on Vagrant \(1.9.6 and 2.0.3\) and VirtualBox \(5.1.30 and 5.2.8\).
 
