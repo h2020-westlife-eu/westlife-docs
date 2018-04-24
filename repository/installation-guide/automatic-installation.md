@@ -1,0 +1,4 @@
+# Automatic installation
+
+Vagrant + Virtualbox
+
