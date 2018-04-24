@@ -14,6 +14,8 @@ If you have it from previous installation, then put it next to the VagrantFile -
 If you don't have, these will be generated and you need to register them with West-Life SSO. Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
 
 `SP_IDENTIFICATION=http://[your public domain for repository] SP_ENDPOINT=http://[your public domain for repository]/mellon` 
+
+Register the generated files with West-Life SSO - send them to westlife-aai@ics.muni.cz
 {% endhint %}
 
 {% hint style="warning" %}
