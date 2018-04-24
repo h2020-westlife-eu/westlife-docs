@@ -24,7 +24,7 @@
 * [Repository](repository/README.md)
   * [Installation guide](repository/installation-guide/README.md)
     * [Automatic installation](repository/installation-guide/automatic-installation.md)
-    * [Manual deployment from source codes](repository/installation-guide/manual-deployment-from-source-codes.md)
+    * [Manual installation from source codes](repository/installation-guide/manual-deployment-from-source-codes.md)
   * [User's guide](repository/users-guide.md)
   * [Developer's guide](repository/developers-guide/README.md)
     * [ARIA integration](repository/developers-guide/aria-integration.md)

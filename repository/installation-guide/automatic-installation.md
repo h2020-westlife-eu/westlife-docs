@@ -1,4 +1,4 @@
-## Automatic installation
+# Automatic installation
 
 The following procedure will prepare environment in VirtualBox configured with port forwarding and shared folders automatically using Vagrant tool. It's appropriate for testing and or development installation on local workstation.
 
@@ -7,15 +7,15 @@ The following procedure will prepare environment in VirtualBox configured with p
 External registration is needed with West-Life SSO and ARIA for integrating single sign on and project proposal import. Demo registration package can be provided upon request.
 
 {% hint style="warning" %}
-In order to integrate with West-Life SSO, you need your `sp-metadata,idp-metadata,sp_key `and` sp_cert` files. 
+In order to integrate with West-Life SSO, you need your `sp-metadata,idp-metadata,sp_key`and`sp_cert` files.
 
-If you have it from previous installation, then put it next to the VagrantFile - these will be reused. 
+If you have it from previous installation, then put it next to the VagrantFile - these will be reused.
 
 If you don't have, these will be generated and you need to register `sp-metadata.xml` file with West-Life SSO. Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
 
-`SP_IDENTIFICATION=http://[your public domain for repository] `
+`SP_IDENTIFICATION=http://[your public domain for repository]`
 
-`SP_ENDPOINT=http://[your public domain for repository]/mellon` 
+`SP_ENDPOINT=http://[your public domain for repository]/mellon`
 
 After vagrant up \(or bootstrap.sh\), find the generated file `sp-metadata.xml` and register it with West-Life SSO - send it to westlife-aai@ics.muni.cz
 {% endhint %}
@@ -47,9 +47,9 @@ vagrant up
 
 If new sp-metadata.xml was generated, send it to westlife-aai@ics.muni.cz in order to enable authentication via West-Life AAI.
 
-After successful finish. The VM is prepared, the port 8080 is automatically forwarded to VM's port 80. To connect to VM using SSH 
+After successful finish. The VM is prepared, the port 8080 is automatically forwarded to VM's port 80. To connect to VM using SSH
 
-`vagrant ssh `
+`vagrant ssh`
 
 The backend DB is using randomly generated access credentials at `/etc/westlife/repository.key`
 
