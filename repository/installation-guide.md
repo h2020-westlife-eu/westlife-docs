@@ -11,11 +11,13 @@ In order to integrate with West-Life SSO, you need your `sp-metadata,idp-metadat
 
 If you have it from previous installation, then put it next to the VagrantFile - these will be reused. 
 
-If you don't have, these will be generated and you need to register them with West-Life SSO. Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
+If you don't have, these will be generated and you need to register `sp-metadata.xml` file with West-Life SSO. Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
 
-`SP_IDENTIFICATION=http://[your public domain for repository] SP_ENDPOINT=http://[your public domain for repository]/mellon` 
+`SP_IDENTIFICATION=http://[your public domain for repository] `
 
-Register the generated files with West-Life SSO - send them to westlife-aai@ics.muni.cz
+`SP_ENDPOINT=http://[your public domain for repository]/mellon` 
+
+After vagrant up \(or bootstrap.sh\), find the generated file `sp-metadata.xml` and register it with West-Life SSO - send it to westlife-aai@ics.muni.cz
 {% endhint %}
 
 {% hint style="warning" %}
