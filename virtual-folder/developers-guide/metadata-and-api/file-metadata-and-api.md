@@ -6,13 +6,11 @@ Get Providers
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to get root directory structure consiting of registered storage providers. 
+This endpoint allows you to get root directory structure consiting of registered storage providers.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-
-{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
@@ -115,3 +113,4 @@ id of existing dataset
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+

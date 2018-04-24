@@ -6,23 +6,20 @@
 
 External registration is needed with West-Life SSO and ARIA for integrating single sign on and project proposal import. Demo registration package can be provided upon request.
 
-{% hint style="info" %}
-In order to integrate with West-Life SSO, you need your sp-metadata,idp-metadata,sp\_key and sp\_cert files. These are newly generated for each installation. If you have it from previous installation, then put it next to the VagrantFile - these will be reused instead of generating new one
+{% hint style="warning" %}
+In order to integrate with West-Life SSO, you need your `sp-metadata,idp-metadata,sp_key `and` sp_cert` files. 
 
-Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
+If you have it from previous installation, then put it next to the VagrantFile - these will be reused. 
 
-```text
- SP_IDENTIFICATION=http://[your public domain for repository]
- SP_ENDPOINT=http://[your public domain for repository]/mellon 
-```
+If you don't have, these will be generated and you need to register them with West-Life SSO. Edit the bootstrap.sh file and change values of variables to your hostname and registered identification with West-Life SSO.
+
+`SP_IDENTIFICATION=http://[your public domain for repository] SP_ENDPOINT=http://[your public domain for repository]/mellon` 
 {% endhint %}
 
-{% hint style="info" %}
-In order to have working ARIA integration and West-Life SSO integration you need to register your Repository instance. To do that you need fully qualified domain name at which your application is accessible within your network, it can be public \(e.g. [http://myrepository.org](http://myrepository.org) or private [http://mylocalrepository.intranet](http://mylocalrepository.intranet) \).
+{% hint style="warning" %}
+In order to have working ARIA integration, you need your fully qualified domain name registered with Instruct via [https://www.structuralbiology.eu/contact-us/](https://www.structuralbiology.eu/contact-us/).
 
-Send these and other details to Instruct via [https://www.structuralbiology.eu/contact-us/](https://www.structuralbiology.eu/contact-us/)and to West-Life SSO operator.
-
-Once received add client\_id and client\_secret into `frontend/ariademo/clientIds.php`.
+If you have it from previous installation, place `clientIds.php` next to the VagrantFile - this will be reused. Otherwise wait for client\_id and client\_secret, and put them into `frontend/ariademo/clientIds.php`after installation.
 
 ```php
 <?php
