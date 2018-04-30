@@ -1,4 +1,6 @@
 # Installation guide
 
-To install into local machine - development/testing installation is created in Virtualbox - vagrant tool is used, follow Development installation. To install into server, cloud - follow Manual installation from source code.
-
+This guide  contains information, how to install Repository into various environment.
+* External registration is needed with West-Life SSO and ARIA, follow [Prerequisites](prereauisites.md).  
+* To prepare development/testing environment follow [Automatic Installation](automatic-installation.md).
+* To prepare production environment in public domain, follown [Manual installation](manual-installation.md).

@@ -23,6 +23,7 @@
 * [Virtual Machines](virtual-machines.md)
 * [Repository](repository/README.md)
   * [Installation guide](repository/installation-guide/README.md)
+    * [Prerequisites](repository/installation-guide/prerequisites.md)
     * [Automatic installation](repository/installation-guide/automatic-installation.md)
     * [Manual installation from source codes](repository/installation-guide/manual-deployment-from-source-codes.md)
   * [User's guide](repository/users-guide.md)
