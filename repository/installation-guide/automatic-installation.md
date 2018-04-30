@@ -4,8 +4,7 @@ The following procedure will prepare environment in VirtualBox configured with p
 
 [Vagrant tool](https://www.vagrantup.com/downloads.html) and [Virtualbox](https://www.virtualbox.org/wiki/Downloads) is required for installing Repository from source codes. Tested on Vagrant \(1.9.6 and 2.0.3\) and VirtualBox \(5.1.30 and 5.2.8\).
 
-External registration is needed with West-Life SSO and ARIA for integrating single sign on and project proposal import. 
-Follow prerequisites at [Prerequisites](prerequisites.md).
+External registration is needed with West-Life SSO and ARIA for integrating single sign on and project proposal import. Follow prerequisites at [Prerequisites](prerequisites.md).
 
 Execute following in your command line:
 

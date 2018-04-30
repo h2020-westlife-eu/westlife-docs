@@ -6,76 +6,7 @@ Aria integration follows docs at [http://aria.structuralbiology.eu/docs.html ](h
 with slight modification explained in this type of info box
 {% endhint %}
 
-The following steps needs to be performed in order to get proposals from ARIA database: 
-  1. your application needs first generate special link with encrypted client\_id and secret\_id 
-  2. when user clicks the link, first it is redirected to Instuct site to authenticate and authorize access to the Repository web app. When redirected back, it is redirected with access code and state in url parameters. 
-  3. with access code, web application requests access token. 
-  4. with access token, web application requests list of proposals 
-  5. user can initiate to request proposal detail, it is obtained using access token and proposal ID \(pid\).
-
-{% plantuml %}
-skinparam sequenceArrowThickness 2
-skinparam roundcorner 5
-skinparam BoxPadding 10
-skinparam SequenceGroupBodyBackgroundColor transparent
-
-actor User
-box "Repository web app at http://[yourweb]" #WhiteSmoke
-  participant "index.html" as index
-  participant "accessToken.php" as php
-end box
-box "ARIA API at https://structuralbiology.eu/" #Ivory
-participant "authorize" as authorize
-participant "oauth" as oauth
-participant "oauth/proposallist" as list
-participant "oauth/proposal" as proposal
-end box
-group Step 1. get link with state code
-  User -> index: get
-  activate index
-  index -> php: generate state
-  activate php
-  php --> index: state
-  index --> User: link with state
-end
-group Step 2. get access_code
-  User -> index: click link
-  index -> authorize: get access_code
-  activate authorize
-  authorize --> User: redirect
-  deactivate index
-  User -> authorize: confirm 
-  authorize --> index: redirect
-  deactivate authorize
-end
-group Step 3. get access_token
-  activate index
-  index --> User: access_code
-  index -> php: code and state
-  php -> oauth: code and state
-  activate oauth
-  oauth --> php: access token
-  deactivate oauth
-  php --> index: access token
-  deactivate php
-end
-group Step 4. get list of proposals
-  index -> list: get(access_token)
-  activate list
-  list --> index: list
-  deactivate list
-  index --> User: show list
-end
-group Step 5. get proposal detail
-  User -> index: click on proposal
-  index --> proposal: get(pid,access_token)
-  activate proposal
-  proposal --> index: detail
-  deactivate proposal
-  index --> User: show detail
-end
-{% endplantuml %}
-  
+The following steps needs to be performed in order to get proposals from ARIA database: 1. your application needs first generate special link with encrypted client\_id and secret\_id 2. when user clicks the link, first it is redirected to Instuct site to authenticate and authorize access to the Repository web app. When redirected back, it is redirected with access code and state in url parameters. 3. with access code, web application requests access token. 4. with access token, web application requests list of proposals 5. user can initiate to request proposal detail, it is obtained using access token and proposal ID \(pid\).
 
 ## Step 1 Obtain link
 
