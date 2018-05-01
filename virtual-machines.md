@@ -167,6 +167,12 @@ _7._ If you will not use the VM anymore, you can delete \(destroy\) the VM:
 vagrant destroy
 ```
 
+## Custom installation
+
+In order to install selected configuration to cloud environment, use bootstrap scripts from selected configuration above to install selected configuration into custom virtual machines. As the scripts above were tested on Scientific Linux 7, no or minimal changes is needed on any other RHEL 7 derivative \(Centos 7.x, etc.\). Some slight changes and manual steps need to be done on other OS. 
+
+Custom installation was tested on Google Cloud Compute Engine using Centos 7 and Amazon AWS using Centos 7.
+
 ## Release Notes
 
 * 27/06/2017 - added variation of Vagrant scripts for different deployment type
