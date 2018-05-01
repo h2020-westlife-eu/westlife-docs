@@ -171,7 +171,7 @@ vagrant destroy
 
 In order to install selected configuration to cloud environment, use bootstrap scripts from selected configuration above to install selected configuration into custom virtual machines. As the scripts above were tested on Scientific Linux 7, no or minimal changes is needed on any other RHEL 7 derivative \(Centos 7.x, etc.\). Some slight changes and manual steps need to be done on other OS. 
 
-Custom installation was tested on Google Cloud Compute Engine using Centos 7 and Amazon AWS using Centos 7.
+Custom installation was tested on Google Cloud Compute Engine using Centos 7 and Amazon AWS using Centos 7 and in academic cloud infrastructure OpenStack and OpenNebula environment using CernVM 4 template registered at appdb.egi.eu [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) and [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm)
 
 ## Release Notes
 
