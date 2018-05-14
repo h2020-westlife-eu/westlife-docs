@@ -25,3 +25,19 @@ Alternatively you may use the RAW image for deployment into OpenStack at [https:
 
 Use the downloaded image to deploy it to prefered provider. You may deploy the image in EGI resources - follow EGI documentation.
 
+## Contextualization
+
+OVA image for OpenNebula contains by default contextualization, RAW image for OpenStack contains reference to cloud-init file which needs to be provided in order to boot Virtual Folder and related software during first boot. By default the image contextualization is set to use direct connection to CernVM-FS repositories. If you have local squid proxy server, it is very recommended to configure it in contextualization script. 
+
+```text
+[ucernvm-begin]
+cvmfs_http_proxy=http://<host>:<port>
+[ucernvm-end]
+
+[cernvm]
+proxy = http://<host>:<port>;DIRECT
+
+```
+
+Further information about contextualization of CernVM can be found at [https://cernvm.cern.ch/portal/contextualisation](https://cernvm.cern.ch/portal/contextualisation)
+
