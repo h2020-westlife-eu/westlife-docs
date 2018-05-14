@@ -24,14 +24,6 @@ Clicking on any file with PDB extension will switch to the Visualize tab - \(Lit
 
 Clicking on any file with extension other than PDB will switch to View/Edit - 
 
-\(
-
-Codemirror component integrated from 
-
-[https://codemirror.net/](https://codemirror.net/)
-
-\)
-
 ![](../../.gitbook/assets/filemanager5.PNG)
 
 ## Dataset
