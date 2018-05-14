@@ -2,7 +2,7 @@
 
 In order to install/launch legacy software and have access to a desktop you may install the virtual folder with selected software suites either on your cloud provider, or locally on your server, cluster, workstation or even laptop.
 
-The standard procedure is to download virtual machine template image from appDB \(18MB\). If you would like to have testing environment set by Vagrant tool and VirtualBox, follow [Development installation](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/installation-guide/Development%20installation/README.md) chapter.
+The standard procedure is to download virtual machine template image from appDB \(18MB\). If you would like to have testing environment set by Vagrant tool and VirtualBox, follow [Virtual Machines](../../virtual-machines.md) chapter.
 
 ## Downloading VM image
 
