@@ -2,17 +2,17 @@
 
 ## Introduction
 
-"Virtual Folder" provides a unified access mechanism to files stored in a variety of locations including the local file system, and B2DROP and other cloud storage facilities. It is developed in work package WP6 by the [West-Life H2020 project](https://west-life.eu), which is running from 2015 to 2018. It provides application level services usable for structural biology use cases and follows [the structural biology data lifecycle](http://internal-wiki.west-life.eu/w/images/9/9c/Assessment_of_the_life_cycle_of_structural_data_and_comparison_with_other_scientific_data.docx). Data management work package WP6 build on existing infrastructure for storing and accessing data to create a "Virtual Folder". Full documentation is rendered in [HTML docs](https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/content/) or [PDF docs](https://www.gitbook.com/download/pdf/book/h2020-westlife-eu/virtual-folder-docs)
+"Virtual Folder" provides a unified access mechanism to files stored in a variety of locations including the local file system, and B2DROP and other cloud storage facilities. It is developed in work package WP6 by the [West-Life H2020 project](https://west-life.eu), which is running from 2015 to 2018. It provides application level services usable for structural biology use cases and follows [the structural biology data lifecycle](http://internal-wiki.west-life.eu/w/images/9/9c/Assessment_of_the_life_cycle_of_structural_data_and_comparison_with_other_scientific_data.docx). Data management work package WP6 build on existing infrastructure for storing and accessing data to create a "Virtual Folder". 
 
 ## Usage
 
-A public installation of the Virtual Folder is available at [West-Life portal](https://portal.west-life.eu/virtualfolder). Follow [User's guide](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/doc/users-guide.md) for further details how to use it.
+A public installation of the Virtual Folder is available at [West-Life portal](https://portal.west-life.eu/virtualfolder). Follow [User's guide](users-guide/) for further details how to use it.
 
 ## Installation
 
 Virtual Folder can be installed: 1. from source codes 2. from binaries at cernvm-fs 3. from cloud template, contextualized to binaries at cernvm-fs
 
-For all the installation options follow: [Installation guide](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/doc/installation-guide.md).
+For all the installation options follow:[ Installation guide](installation-guide/).
 
 ### Brief installation instruction from source codes
 
@@ -39,14 +39,16 @@ Inside VM, the files of the current working directory of host are mounted into `
 
 The functionality of the Virtual Folder can be integrated into other portal or web application. The recommended method is to link the existing component using cross-document messaging mechanism - e.g. for picking a file from Virtual Folder by using the File Picker component.
 
-Follow [Integration guide](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/doc/integration-guide.md) for further details.
+Follow [Integration guide](integration-guide/) for further details.
 
 ## Development
 
-In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Development installation](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/doc/installation-guide/development-installation.md). Documents are maintained inside /docs folder and built from dev-docs branch, occasionally merged to master branch; in sync with [Gitbook](https://www.gitbook.com/book/h2020-westlife-eu/virtual-folder-docs/details)
+In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Virtual Machines](../virtual-machines.md) chapter. 
 
 ## Release Notes
 
+* 14/05/2018 - update docs to new gitbook system - no PDF, updated links.
+* 01/04/2018 - docs moved to westlife-docs repository, docs covering Virtual Folder, Virtual Machines and Repository
 * 28/06/2017 - UI improvement, docs in sync with gitbook and /doc folder in dev-docs branch
 * 23/06/2017 - added support for source code installation/binary installation
 * 01/05/2017 - Added Dataset demo integrates some web PDB components to visualize features of PDB and UniProt entries
