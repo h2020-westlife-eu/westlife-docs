@@ -2,11 +2,7 @@
 
 ## File picker
 
-You can use the file picker component to select a file from any storage repository which you have connected to the virtual folder.
-
-The recommended way to use this component is at [Link component](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/users-guide/integration-guide/link-component.md)
-
-The following exemplar web page can be used to generate a publicly accessible URL which can be used to download the file from virtual folder.
+You can use the file picker component to select a file from any storage repository which you have connected to the virtual folder and generate publicly accessible URL which can be used to download the file from virtual folder. In order to integrate File picking into your web application follow [Integration guide -&gt; Select File or Dir from Virtual Folder](../integration-guide/select-file-or-dir-from-virtual-folder.md).
 
 Exemplar file picker and upload dir picker web application is at
 
