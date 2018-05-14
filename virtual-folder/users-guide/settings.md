@@ -38,11 +38,7 @@ Select DropBox -> click 'Connect to DROPBOX'
 
 ![](../../.gitbook/assets/settingsdropbox1.PNG)
 
-You will be redirected to sign in or create Dropbox account.
-
-![](https://github.com/h2020-westlife-eu/virtual-folder-docs/tree/85c40aad132037341365c7bade20b38dc642de6b/virtualfolder/users-guide/assets/SettingsDropbox2.PNG)
-
-After signing. You'll be asked to allow Virtual Folder to access your data:
+You will be redirected to sign in or create Dropbox account. After login, you'll be asked to allow Virtual Folder to access your data:
 
 ```text
 Click Allow
