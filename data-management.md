@@ -3,7 +3,7 @@
 ## Introduction
 
   
-Research data is acquired, interpreted, published, reused, and sometimes eventually discarded. Structural biology has a strong tradition of data sharing, expressed by the founding of the [Protein Data Bank (PDB) in 1971][1]. In 2015, 9338 new structures were deposited in the Protein Data Bank, which is the result of approximately more than 25,000 experiments [Assesment][2]. All these experiments have together a combined data rate greater than that of the Large Hadron Collider.
+Research data is acquired, interpreted, published, reused, and sometimes eventually discarded. Structural biology has a strong tradition of data sharing, expressed by the founding of the Protein Data Bank (PDB) in 1971[^1]. In 2015, 9338 new structures were deposited in the Protein Data Bank, which is the result of approximately more than 25,000 experiments[^2]. All these experiments have together a combined data rate greater than that of the Large Hadron Collider.
 
 One of the main obstacles to fully achieve a proper handling of the data life cycle in structure biology is managing the data, which will include datasets acquired in a range of different experimental facilities, some easy to transfer by email or USB stick, and some so large that it is only feasible to process them at source.
 
@@ -11,6 +11,6 @@ To address this obstacles, [Virtual Folder](virtual-folder/) provides common int
 
 For experimental facilities that are newly embarking on data management, we provide a reference implementation of a [Repository](repository/) that supplies suitable metadata to the portal, follows common workflow of project as defined ARIA and allows deposit datasets via Virtual Folder to desired data infrastructure. Note that this reference installation expects to be ammended based on the feedback of facility users thus technology choosen for backend and frontend implementation are described and source code provided in order to facilitate further customization and development.
 
-References:
-- [1]: PDB, 1971. Protein Data Bank. Nature New Biology.
-- [2]: Assessment of the life cycle of structural data and comparison with other scientific data, West-Life Report, D3.1, [www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf](https://www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf)
+[^1]: PDB, 1971. Protein Data Bank. Nature New Biology.
+
+[^2]: Assessment of the life cycle of structural data and comparison with other scientific data, West-Life Report, D3.1, [www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf](https://www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf)
