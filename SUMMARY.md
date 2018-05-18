@@ -29,4 +29,5 @@
   * [User's guide](repository/users-guide.md)
   * [Developer's guide](repository/developers-guide/README.md)
     * [ARIA integration](repository/developers-guide/aria-integration.md)
+* [Data Management](data-management.md)
 
