@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Data Management](data-management.md)
 * [Virtual Folder](virtual-folder/README.md)
   * [User's guide](virtual-folder/users-guide/README.md)
     * [Settings](virtual-folder/users-guide/settings.md)
@@ -29,5 +30,4 @@
   * [User's guide](repository/users-guide.md)
   * [Developer's guide](repository/developers-guide/README.md)
     * [ARIA integration](repository/developers-guide/aria-integration.md)
-* [Data Management](data-management.md)
 
