@@ -12,5 +12,5 @@ To address this obstacles, [Virtual Folder](virtual-folder/) provides common int
 For experimental facilities that are newly embarking on data management, we provide a reference implementation of a [Repository](repository/) that supplies suitable metadata to the portal, follows common workflow of project as defined ARIA and allows deposit datasets via Virtual Folder to desired data infrastructure. Note that this reference installation expects to be ammended based on the feedback of facility users thus technology choosen for backend and frontend implementation are described and source code provided in order to facilitate further customization and development.
 
 References:
-- [1] PDB, 1971. Protein Data Bank. Nature New Biology.
-- [2] Assessment of the life cycle of structural data and comparison with other scientific data, West-Life Report, D3.1, [www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf](https://www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf)
+- [1]: PDB, 1971. Protein Data Bank. Nature New Biology.
+- [2]: Assessment of the life cycle of structural data and comparison with other scientific data, West-Life Report, D3.1, [www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf](https://www.structuralbiology.eu/upload/west-life/W-L_Deliverable_D3_1.pdf)
