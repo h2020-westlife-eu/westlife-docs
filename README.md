@@ -5,7 +5,7 @@ This documentation contains administrator, user's and developer's guide of sever
 Documentation is rendered as
 
 * HTML version: [https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/content/](https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/)
-* PDF version: [https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/content/](https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/westlifedocs.pdf)
+* PDF version: [https://github.com/h2020-westlife-eu/westlife-docs/raw/master/westlifedocs.pdf](https://github.com/h2020-westlife-eu/westlife-docs/raw/master/westlifedocs.pdf)
 
 Folowing topics are covered:
 
