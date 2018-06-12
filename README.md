@@ -1,6 +1,6 @@
 # Introduction
 
-This documentation contains administrator, user's and developer's guide of several products produced by H2020 West-Life project.
+This documentation contains administrator, user's and developer's guide of several products produced by H2020 West-Life project. Public services of this project are available at [https://www.west-life.eu](https://www.west-life.eu).
 
 Documentation is rendered as
 
