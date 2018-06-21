@@ -1,6 +1,6 @@
 # Virtual Machines
 
-The repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://github.com/h2020-westlife-eu/wp6-vm.git) contains various configuration for development and testing purposes. Prerequisites:
+The GIT repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://github.com/h2020-westlife-eu/wp6-vm.git) contains various configuration for development and testing purposes. Prerequisites:
 
 1. Vagrant - tool for automation of virtual machine deployment. 
    1. For MS Windows - Download and install vagrant from [https://www.vagrantup.com/](https://www.vagrantup.com/)  \(tested on/recommended version vagrant 1.9.6, vagrant 2.0.3 on Windows requires updated Powershell, e.g. via Windows Management Framework WMF 5.1 [https://www.microsoft.com/en-us/download/details.aspx?id=54616](https://www.microsoft.com/en-us/download/details.aspx?id=54616)\) 
@@ -50,19 +50,7 @@ After you finish your work, you can destroy the VM and release resources by:
 vagrant destroy
 ```
 
-## Detailed instruction
-
-Download or clone metarepository [ZIP \(4kB\)](https://github.com/h2020-westlife-eu/wp6-vm/archive/master.zip) unzip it into some \[wp6-vm directory\] or clone the main repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://github.com/h2020-westlife-eu/wp6-vm.git).
-
-**1.** Open command-line \(e.g. cmd, cygwin or terminal\) and cd to directory where wp6-vm is unzipped/cloned
-
-```text
-cd [wp6-vm directory]/[selected configuration]
-```
-
-These configurations are available:
-
-### Standalone from Source Codes \(default\)
+### Virtual Folder from Source Codes \(default\)
 
 This is based on CernVM 4.0 micro image which boots into Scientific Linux 7. Initial VM image size = 18MB, during boot and bootstrap downloads 658 MB. This is preferred option as CernVM distrtomaibutes most updated SL7 with recent security updates, so either restart or `cernvm-update -a` is required occasionally.
 
@@ -71,7 +59,7 @@ cd wp6-vm/vf-standalone-src/
 vagrant up
 ```
 
-### Standalone from Binaries \(distributed via cvmfs\).
+### Virtual Folder from Binaries \(distributed via cvmfs\).
 
 The same as above - but Virtual Folder is not compiled from sources -boots from `\cvmfs\`. This option is faster, the last stable release is distributed.
 
@@ -80,9 +68,10 @@ cd wp6-vm/vf-standalone-bin/
 vagrant up
 ```
 
-### Standalone from Source Codes on Scientific Linux 7 \(~RHEL 7\)
+### Virtual Folder from Source Codes on Scientific Linux 7 \(~RHEL 7\)
 
-It is based on minimal Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. Recommended for preparing off-line deployment.
+It is based on minimal Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. 
+Recommended for preparing off-line deployment.
 
 ```text
 cd wp6-vm/vf-standalone-src-sl7/
@@ -118,20 +107,27 @@ git checkout dev
 cd ..
 ```
 
-### Virtual Folder enable multiuser environment
+### Options for bootstrap configuration
 
-By default, Virtualfolder in VM will contain single user environment - no login is required. To enable multiuser environment with VRE, edit bootstrapsources.sh file and uncomment the following line. Default user for VF will then be vagrant/vagrant:
+By default, Virtualfolder in VM will contain single user environment - no login is required. 
+To enable multiuser environment edit bootstrapsources.sh file and add these environment variables:
 
-```text
-export PORTAL_DEPLOYMENT=1  
+```bash
+# use either
+export PORTAL_DEPLOYMENT=1 # will enable VRE environment based on Python Django project, don't combine with West-Life SSO
+# or
+export SSO_DEPLOYMENT=1 # will enable integration with West-Life SSO
+# additionally enalbe JUPYTER notebook support
+export ALLOW_JUPYTER=1 # in case of source code installation, it'll install jupyter notebook and all it's dependencies  
 ```
 
 ### Base Box
 
 The following base boxes are used:
 
-* Scientific Linux 7 with minimal GUI \(~600MB\), some additional packages are downloaded during bootstrap. Bootstrap takes about 4 mins.
-* CernVM 4  \(~18MB\), after boot it will download additional 200-300 MB.
+* [westlife-eu/scientific_7_gui](https://app.vagrantup.com/westlife-eu/boxes/scientific_7_gui) \(~600MB\), minimal SL 7 with basic GUI desktop.
+* [westlife-eu/scientific_7](https://app.vagrantup.com/westlife-eu/boxes/scientific_7)\(~380MB\), minimal SL 7 box without GUI.
+* [westlife-eu/cernvm4](https://app.vagrantup.com/westlife-eu/boxes/cernvm4)  \(~18MB\), after boot it will download additional 200-300 MB. Modified CernVM4 image to boot into GUI.
 
 ## Usage
 
