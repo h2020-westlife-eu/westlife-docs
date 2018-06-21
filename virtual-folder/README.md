@@ -46,7 +46,12 @@ Follow [Integration guide](integration-guide/) for further details.
 In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Virtual Machines](../virtual-machines.md) chapter. 
 
 ## Release Notes
-
+* 21/06/2018 - new features: Import Settings from another Virtual Folder instance, 
+integration with West-Life SSO, 
+generate obfuscated public webdav URL in order to prevent full path disclosure,
+added Jupyter notebook option to start instance on local deployment
+updated features: UI - basic UI as SPA with router navigation (#/setting #/filemanager), updated angular.js 1.6.10 used by EBI PDB components.
+Backend installation into standard linux paths - shared data at /srv/virtualfolder/, database at /var/lib/westlife/, configuration /etc/westlife/, logs /var/log/westlife/  
 * 14/05/2018 - update docs to new gitbook system - no PDF, updated links.
 * 01/04/2018 - docs moved to westlife-docs repository, docs covering Virtual Folder, Virtual Machines and Repository
 * 28/06/2017 - UI improvement, docs in sync with gitbook and /doc folder in dev-docs branch

@@ -76,3 +76,23 @@ Fill in the WebDAV URL and account information -> click Add
 
 After clicking the Add button, and if everything works well, the connected WEBDAV provider should appear in the list.
 
+## Filesystem
+
+In local deployment installation, you may allow access to directory where virtual folder is installed.
+E.g. shared directory within your local network etc.
+![](../../.gitbook/assets/settingsfilesystem.PNG)
+
+## Import Settings
+
+You may import settings from another deployment of virtual folder, e.g. import settings from your public virtual folder to the local one using "Import from public Virtual Folder".
+Leave the default URL of Virtual Folder or change it, if you would liek to import from different instance (e.g. another local installation).
+![](../../.gitbook/assets/settingsimport1.PNG)
+Pop up window will allow you to select settings to be imported.
+![](../../.gitbook/assets/settingsimport2.PNG)
+After that you may choose to rename aliases, if they conflict with local one.
+![](../../.gitbook/assets/settingsimport3.PNG)
+
+
+ 
+
+ 

@@ -6,8 +6,6 @@ or click on the 'Browse content' button on any connected provider or hover over 
 
 ![](../../.gitbook/assets/filemanager2.PNG)
 
-![](../../.gitbook/assets/filemanager2%20%281%29.PNG)
-
 ## File list view
 
 The file manager consists of 2 panels, you can browse the directory structure on each panel. Clicking on directory shows details of the directory, clicking in '..' goes into parent directory:

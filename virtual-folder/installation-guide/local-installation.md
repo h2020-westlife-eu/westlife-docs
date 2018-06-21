@@ -15,18 +15,18 @@ Download the latest West-life VM in the OVA compatible format from
 
 [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm)
 
-#[](../../.gitbook/assets/downloadappdb.gif)
+![](../../.gitbook/assets/downloadappdb.gif)
 
 Import the downloaded image into VirtualBox.
 
-#[](../../.gitbook/assets/importvm2.gif)
+![](../../.gitbook/assets/importvm2.gif)
 The size of OVA image is very small (18 MB) as it contains only micro kernel of CernVM 4.
 It bootstraps the rest of operating system (based on Scientific Linux 7) and 
 additional software from Internet. It may download about 100-200 MB during initial boot, 
 and it can take about several minutes.
 
 Desktop of VM is accessible via VirtualBox tool.
-#[](../../.gitbook/assets/vmdesktop.gif)
+![](../../.gitbook/assets/vmdesktop.gif)
 
 ## Using Vagrant tool and VirtualBox
 
