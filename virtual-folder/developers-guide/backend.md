@@ -18,15 +18,28 @@ It's possible to ammend these environment variables
 /etc/systemd/system/westlife-metadata.service
 ...
 [Service]
-Environment=VF_VRE_API_URL=http://localhost/api/ # location of VRE api, if present 
-Environment=VF_STORAGE_DIR=/srv/virtualfolder/   # filesystem location where user's virtual folders are mounted 
-Environment=VF_SCRIPTS_DIR=/opt/virtualfolder/scripts # location of scripts where virtualfolder is installed
-Environment=VF_ALLOW_FILESYSTEM=true             # true - allows filesystem provider, false= 
-Environment=VF_ALLOW_MODULES=true                # true - enables testing modules
-Environment=VF_ALLOW_LAB=true                    # true - enables Jupyter LAB task
-Environment=VF_ALLOW_NOTEBOOK=true               # true -enables Jupyter notebook tastk
-Environment=VF_DATABASE_FILE=/var/lib/westlife/metadata.sqlite # database file location
-EnvironmentFile=/etc/westlife/metadata.key       # configuration file 
+# location of VRE api, if present
+Environment=VF_VRE_API_URL=http://localhost/api/ 
+# filesystem location where user's virtual folders are mounted 
+Environment=VF_STORAGE_DIR=/srv/virtualfolder/    
+# location of scripts where virtualfolder is installed, 
+# mountb2drop and other scripts should be present
+Environment=VF_SCRIPTS_DIR=/opt/virtualfolder/scripts
+# true - allows filesystem provider (access to VM, 
+# recommended for single deployment), false - default  
+Environment=VF_ALLOW_FILESYSTEM=true
+# true - enables testing modules              
+Environment=VF_ALLOW_MODULES=true                
+# true - enables Jupyter LAB task, it allows to execute user's script on VM
+# recommended for private deployment for trusted users
+Environment=VF_ALLOW_LAB=true                    
+# true -enables Jupyter notebook tast, it allows to execute user's script on VM
+# recommended for private deployment for trusted users
+Environment=VF_ALLOW_NOTEBOOK=true               
+# location of database file for metadata
+Environment=VF_DATABASE_FILE=/var/lib/westlife/metadata.sqlite
+# configuration file with other environment variables, keys, etc. 
+EnvironmentFile=/etc/westlife/metadata.key        
 ```
 Log files are by default at `/var/log/westlife` directory.
 
