@@ -7,12 +7,11 @@ The GIT repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://git
    2. For Linux - use prefered package management
       1. Ubuntu:`apt install vagrant`
       2. Centos\(RHEL\):`yum install vagrant`
-2. Virtualbox - VM stack. 
-   1. For MS Windows - Download and install virtualbox [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+2. Virtualbox - VM stack. 1. For MS Windows - Download and install virtualbox [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
-      \(tested on/recommended version Virtualbox 5.1.22, for vagrant 2.0.3 tested on VirtualBox 5.2.8\)
+   \(tested on/recommended version Virtualbox 5.1.22, for vagrant 2.0.3 tested on VirtualBox 5.2.8\)
 
-   2. For Linux - use preferred package management. 
+   1. For Linux - use preferred package management. 
       1. Ubuntu: `apt install virtualbox`
       2. Centos\(RHEL\): `yum install virtualbox`
 
@@ -70,8 +69,7 @@ vagrant up
 
 ### Virtual Folder from Source Codes on Scientific Linux 7 \(~RHEL 7\)
 
-It is based on minimal Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. 
-Recommended for preparing off-line deployment.
+It is based on minimal Scientific Linux 7 - no dependency on online repositories at all. Initial VM image size = 665 MB, boot and bootstrap download 320 MB. Recommended for preparing off-line deployment.
 
 ```text
 cd wp6-vm/vf-standalone-src-sl7/
@@ -93,7 +91,7 @@ Optionally, if you have used west-life VM before, you may remove previous VM and
 
 ```text
 vagrant destroy
-vagrant box update    
+vagrant box update
 ```
 
 ### Deploy development branch
@@ -109,8 +107,7 @@ cd ..
 
 ### Options for bootstrap configuration
 
-By default, Virtualfolder in VM will contain single user environment - no login is required. 
-To enable multiuser environment edit bootstrapsources.sh file and add these environment variables:
+By default, Virtualfolder in VM will contain single user environment - no login is required. To enable multiuser environment edit bootstrapsources.sh file and add these environment variables:
 
 ```bash
 # use either
@@ -118,15 +115,15 @@ export PORTAL_DEPLOYMENT=1 # will enable VRE environment based on Python Django 
 # or
 export SSO_DEPLOYMENT=1 # will enable integration with West-Life SSO
 # additionally enalbe JUPYTER notebook support
-export ALLOW_JUPYTER=1 # in case of source code installation, it'll install jupyter notebook and all it's dependencies  
+export ALLOW_JUPYTER=1 # in case of source code installation, it'll install jupyter notebook and all it's dependencies
 ```
 
 ### Base Box
 
 The following base boxes are used:
 
-* [westlife-eu/scientific_7_gui](https://app.vagrantup.com/westlife-eu/boxes/scientific_7_gui) \(~600MB\), minimal SL 7 with basic GUI desktop.
-* [westlife-eu/scientific_7](https://app.vagrantup.com/westlife-eu/boxes/scientific_7)\(~380MB\), minimal SL 7 box without GUI.
+* [westlife-eu/scientific\_7\_gui](https://app.vagrantup.com/westlife-eu/boxes/scientific_7_gui) \(~600MB\), minimal SL 7 with basic GUI desktop.
+* [westlife-eu/scientific\_7](https://app.vagrantup.com/westlife-eu/boxes/scientific_7)\(~380MB\), minimal SL 7 box without GUI.
 * [westlife-eu/cernvm4](https://app.vagrantup.com/westlife-eu/boxes/cernvm4)  \(~18MB\), after boot it will download additional 200-300 MB. Modified CernVM4 image to boot into GUI.
 
 ## Usage
@@ -165,7 +162,7 @@ vagrant destroy
 
 ## Custom installation
 
-In order to install selected configuration to cloud environment, use bootstrap scripts from selected configuration above to install selected configuration into custom virtual machines. As the scripts above were tested on Scientific Linux 7, no or minimal changes is needed on any other RHEL 7 derivative \(Centos 7.x, etc.\). Some slight changes and manual steps need to be done on other OS. 
+In order to install selected configuration to cloud environment, use bootstrap scripts from selected configuration above to install selected configuration into custom virtual machines. As the scripts above were tested on Scientific Linux 7, no or minimal changes is needed on any other RHEL 7 derivative \(Centos 7.x, etc.\). Some slight changes and manual steps need to be done on other OS.
 
 Custom installation was tested on Google Cloud Compute Engine using Centos 7 and Amazon AWS using Centos 7 and in academic cloud infrastructure OpenStack and OpenNebula environment using CernVM 4 template registered at appdb.egi.eu [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) and [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm)
 

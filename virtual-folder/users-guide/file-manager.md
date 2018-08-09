@@ -20,7 +20,7 @@ Clicking on any file with PDB extension will switch to the Visualize tab - \(Lit
 
 ## View/Edit
 
-Clicking on any file with extension other than PDB will switch to View/Edit - 
+Clicking on any file with extension other than PDB will switch to View/Edit -
 
 ![](../../.gitbook/assets/filemanager5.PNG)
 

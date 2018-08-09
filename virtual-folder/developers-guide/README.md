@@ -1,7 +1,6 @@
 # Developer's guide
 
-Get source codes directly from [github.com/h2020-westlife-eu/virtualfolder](https://github.com/h2020-westlife-eu/virtualfolder), or use option to install virtual machine from source codes described at [Virtual Machines](../../virtual_machines.md). 
-
+Get source codes directly from [github.com/h2020-westlife-eu/virtualfolder](https://github.com/h2020-westlife-eu/virtualfolder), or use option to install virtual machine from source codes described at [Virtual Machines](https://github.com/h2020-westlife-eu/westlife-docs/tree/31f6e2b90206a4d8962f5f78ea55add47fab55cd/virtual_machines.md).
 
 ## Source code structure
 
@@ -16,7 +15,8 @@ bootstrap.sh        # bootstrap script, will install VF in clean VM
 ```
 
 The source code of VF components in `/wp6-virtualfolder` are
-```
+
+```text
 /bootstrap          # various bootstrap scripts for components
 /conf-template      # default templates for linux configuration files
 /scipion            # minor ammendments for scipion installation inside local VF VM
@@ -25,8 +25,6 @@ The source code of VF components in `/wp6-virtualfolder` are
 /src/WP6Service2    # backend in C# (.NET and ServiceStack) of metadataservice
 /www                # frontend in HTML and Javascript (ECMAScript 6 and Aurelia)
 ```
-
-
 
 ## Remove unwanted commits from git tree
 
