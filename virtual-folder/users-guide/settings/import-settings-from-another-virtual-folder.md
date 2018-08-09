@@ -21,5 +21,5 @@ You may import settings from another deployment of virtual folder, e.g. import s
 
 * The settings are imported and available in your Virtual Folder instance.
 
-A one-time RSA 2048 keys and AES encryption are used to transfer settings as they contain tokens or credentials to access your data. For technical details follow Developer's guide -&gt; Import Export Settings API
+A one-time RSA 2048 keys and AES encryption are used to transfer settings as they contain tokens or credentials to access your data. For technical details follow [Developer's guide -&gt; Import Export Settings API](../../developers-guide/import-export-settings-api.md)
 
