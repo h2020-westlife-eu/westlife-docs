@@ -55,5 +55,5 @@ PUT http://localhost:8081/virtualfolder/api/settings
 {"Id":77,"alias":"b2drop_test","type":"B2Drop","username":"...","output":"..."}]
 ```
 
-
+The above workflow is supported be backend web service `wp6-virtualfolder/src/WP6Service2/WP6Service2/Services/Settings/SettingsExportImport.cs` and VFI frontend ui `wp6-virtualfolder/www/src/virtualfoldersetting/importprovider.html` and VFE frontend ui `wp6-virtualfolder/www/src/syncsetting/app.html`.
 
