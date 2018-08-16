@@ -10,6 +10,7 @@
     * [File Picker](virtual-folder/users-guide/file-picker.md)
     * [Related applications](virtual-folder/users-guide/related-applications/README.md)
       * [Jupyter notebook](virtual-folder/users-guide/related-applications/jupyter-notebook.md)
+    * [Metadata](virtual-folder/users-guide/metadata.md)
   * [Installation guide](virtual-folder/installation-guide/README.md)
     * [Cloud installation](virtual-folder/installation-guide/cloud-installation.md)
     * [Local installation](virtual-folder/installation-guide/local-installation.md)
