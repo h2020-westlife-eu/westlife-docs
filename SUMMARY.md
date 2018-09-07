@@ -26,7 +26,7 @@
       * [Dataset metadata and API](virtual-folder/developers-guide/metadata-and-api/dataset-metadata-and-api.md)
       * [File metadata and API](virtual-folder/developers-guide/metadata-and-api/file-metadata-and-api.md)
     * [Import Export Settings API](virtual-folder/developers-guide/import-export-settings-api.md)
-    * [Related application and services \[DRAFT\]](virtual-folder/developers-guide/related-application-and-services.md)
+    * [Related application and services](virtual-folder/developers-guide/related-application-and-services.md)
 * [Virtual Machines](virtual-machines.md)
 * [Repository](repository/README.md)
   * [Installation guide](repository/installation-guide/README.md)
