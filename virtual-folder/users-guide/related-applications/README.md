@@ -4,5 +4,4 @@ Virtual Folder allows to create new instance of third party service. The followi
 
 * Jupyter notebook
 * Jupyter lab
-* ...
 
