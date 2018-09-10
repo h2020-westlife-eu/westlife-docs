@@ -34,12 +34,9 @@ export ALLOW_JUPYTER=1 # enable jupyter
 $WP6SRC/bootstrap/bootstrapJupyter.sh
 ```
 
-### Integration to Metadata service
+Python environment with jupyter and all other dependencies will be installed by default at /opt/jupyter path. You need then to enable tasks in virtual folder UI:
 
-In order to enable Jupyter from binary installation or after manual installation:
-
-* check that python environment is available in path `/opt/jupyter` e.g. as symbolic link to proper location where it was.
-* check/enable jupyter notebook and jupyter lab task in metadata service configuration `/etc/systemd/system/westlife-metadata.service` by adding `VF_ALLOW_LAB=true` `VF_ALLOW_NOTEBOOK=true`:
+* enable jupyter notebook and jupyter lab task in metadata service configuration `/etc/systemd/system/westlife-metadata.service` by adding `VF_ALLOW_LAB=true` `VF_ALLOW_NOTEBOOK=true`:
 
   ```text
   [Service]
