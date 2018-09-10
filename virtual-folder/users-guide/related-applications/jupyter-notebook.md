@@ -8,5 +8,11 @@ In order to start Jupyter or Jupyter Lab - click on small icon in Section 'Avail
 
 The Python 3 and following Python libraries are installed \(common dependencies are not listed `(numpy, matplotlib, ...)`\):`jupyter pymc3 r-irkernel r=3.3.2 tornado=4.5.3 rdkit scikit-learn seaborn keras mkl pandas pillow pydot scipy tensorflow scikit-image line_profiler memory_profiler numexpr pandas-datareader netcdf4 pivottablejs jupyterlab conda-forge bqplot mpld3 ipython-sql nglview ssbio sos sos-notebook prov auto-sklearn`
 
-References: 1. Project Jupyter - [http://jupyter.org/](http://jupyter.org/) 2. Jupyter Lab - [https://jupyterlab.readthedocs.io/en/stable/](https://jupyterlab.readthedocs.io/en/stable/)
+References: 
+
+* Technical documentation howto install jupyter inside virtual folder at Developer's guide [Related application and services](../../developers-guide/related-application-and-services.md). 
+* Project Jupyter - [http://jupyter.org/](http://jupyter.org/) 
+* Jupyter Lab - [https://jupyterlab.readthedocs.io/en/stable/](https://jupyterlab.readthedocs.io/en/stable/)
+
+
 
