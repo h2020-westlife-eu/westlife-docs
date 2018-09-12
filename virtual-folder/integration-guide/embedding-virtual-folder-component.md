@@ -1,6 +1,16 @@
 # Embedding Virtual Folder Component
 
-You can include some of the components of West-Life Virtual Folder in your application, e.g. using `<div>` tag:
+Define global variable `virtualfolderbaseurl` to point to the instance of VF. 
+
+```markup
+<head>
+  <script>
+     var virtualfolderbaseurl="https://portal.west-life.eu/";
+   </script>
+</head>
+```
+
+Then you can include some of the components of West-Life Virtual Folder in your application, e.g. using `<div>` tag:
 
 ```markup
 <div aurelia-app="[componentname]">
@@ -21,13 +31,18 @@ The complete example of embedded component in your web may look:
 
 ```markup
 <html>
+<head>
+  <script>
+     var virtualfolderbaseurl="https://portal.west-life.eu/";
+   </script>
+</head>
 <body>
-<p>filemanager from West-Life VF</p>
-<div aurelia-app="filemanager/main">
-<script type="text/javascript" src="https://portal.west-life.eu/virtualfolder/app.bundle.js"></script>
-<script type="text/javascript" src="https://portal.west-life.eu/virtualfolder/vendor.bundle.js"></script>
-  Loading ...
-</div>
+  <p>filemanager from West-Life VF</p>
+  <div aurelia-app="filemanager/main">
+    <script type="text/javascript" src="https://portal.west-life.eu/virtualfolder/app.bundle.js"></script>
+    <script type="text/javascript" src="https://portal.west-life.eu/virtualfolder/vendor.bundle.js"></script>
+    Loading ...
+  </div>
 </body>
 </html>
 ```
