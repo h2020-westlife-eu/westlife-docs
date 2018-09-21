@@ -19,5 +19,5 @@ Set root password \(vagrant\) and create new user \(vagrant:vagrant\)
 Log-in as root, and download and execute one of the following script:
 
 1. for non-GUI environment: `bash <(curl -L https://bit.ly/2NV019y)`
-2. for GUI environment: `bash <(curl -L http://bit.ly/2QMD1ba)`
+2. for GUI environment: `bash <(curl -L https://bit.ly/2QKQUH0)`
 
