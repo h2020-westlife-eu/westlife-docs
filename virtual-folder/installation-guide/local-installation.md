@@ -32,5 +32,5 @@ cd wp6-vm/vf-standalone-bin/
 vagrant up
 ```
 
-For full options available for local installation, see [Virtual Machines](../../virtual-machines.md)
+For full options available for local installation, see [Virtual Machines](../../virtual-machines/)
 

@@ -43,7 +43,7 @@ Follow [Integration guide](integration-guide/) for further details.
 
 ## Development
 
-In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Virtual Machines](../virtual-machines.md) chapter.
+In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Virtual Machines](../virtual-machines/) chapter.
 
 ## Release Notes
 

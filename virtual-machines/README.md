@@ -27,7 +27,7 @@ cd wp6-vm/[selected_config]
 vagrant up
 ```
 
-![](.gitbook/assets/vmvagrantup.gif)
+![](../.gitbook/assets/vmvagrantup.gif)
 
 This clones special repository with various configuration. After succesfull `vagrant up`, there should be message `BOOSTRAP FINISHED, VM prepared to use` or similar, read the docs specific to the software/service.
 
