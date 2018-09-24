@@ -1,4 +1,4 @@
-# Virtual Machines
+# Virtual Machines and Containers
 
 The GIT repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://github.com/h2020-westlife-eu/wp6-vm.git) contains various configuration for development and testing purposes. Prerequisites:
 
