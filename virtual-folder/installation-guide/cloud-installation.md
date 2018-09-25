@@ -2,14 +2,14 @@
 
 In order to install Virtual Folder in VM or in cloud environment you may use prepared images: 
 
-1. [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm) - The standard OVA \(open virtual appliance\) image can be used to deploy West-Life VM into e.g. OpenNebula cloud environment. 
+1. [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm) - The standard OVA \(open virtual appliance\) image can be used to deploy West-Life VM into e.g. OpenNebula cloud environment. This image is already contextualized for binary bootstrap.
 
-2. [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) - RAW image can be used to deploy West-Life VM into OpenStack cloud environment These images contains default contextualization to binary installation of virtual folder in /cvmfs. Both images are small \(18 MB, 23 MB respectively\) containing only CernVM 4 bootloader, which boots into standard Scientific Linux \(currently version 7.3\) and contextualizes it with West-Life specific software.
+2. [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) - RAW image can be used to deploy West-Life VM into OpenStack cloud environment. This image is not contextualized - call binary contextualization at `/cvmfs/west-life.egi.eu/software/virtualfolder/latest/bootstrap/bootstrapcloud.sh`
 
-3. Any generic image of based on RHEL 7, \(e.g. CernVM 4, Centos 7,...\)
+3. Any generic image of based on RHEL 7, \(e.g. CernVM 4, Centos 7,...\) and use one of the following script for contextualization
 
-* for binary installation launch the following `/cvmfs/west-life.egi.eu/software/virtualfolder/latest/bootstrap/bootstrapcloud.sh` 
-* for source code installation launch the following script
+* for binary installation: `/cvmfs/west-life.egi.eu/software/virtualfolder/latest/bootstrap/bootstrapcloud.sh` 
+* for source code installation:
 
   ```bash
   #!/usr/bin/env bash
