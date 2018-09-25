@@ -6,13 +6,9 @@ Get the docker-compose folder from Westlife Github repository
 
 cd inside this repo
 
-docker-compose build
-docker-compose up -d
+docker-compose build docker-compose up -d
 
-docker-compose exec vf /bin/bash
-/install.sh
-Follow final instructions (daemon reload etc)
-exit
+docker-compose exec vf /bin/bash /install.sh Follow final instructions \(daemon reload etc\) exit
 
 The VRE is up!
 

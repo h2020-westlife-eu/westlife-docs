@@ -23,6 +23,20 @@ Log-in as root, and execute one of the following script:
 1. for non-GUI environment: `bash <(curl -L https://bit.ly/2xDpLwR)`
 2. for GUI environment: `bash <(curl -L https://bit.ly/2zrDPLZ)`
 
+### Create box
+
+launch vagrant script to package box. Expecting the virtual machine name is `my-sl7-virtualmachine`
+
+```text
+vagrant package --output sl7mini.box --base my-sl7-virtualmachine
+```
+
+Explanation:
+
+* `package` instruct vagrant to get virtual machine from virtual box and package it into separate file
+* `--output sl7mini.box` writes the result to file named as sl7mini.box
+* `--base my-sl7-install` takes VirtualBox virtual machine named my-sl7-virtualmachine
+
 ## CernVM 4
 
 Download CernVM4 image [https://cernvm.cern.ch/portal/downloads](https://cernvm.cern.ch/portal/downloads) for vagrant.
