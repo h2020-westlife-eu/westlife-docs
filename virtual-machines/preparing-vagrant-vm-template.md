@@ -1,5 +1,7 @@
 # Preparing vagrant VM template
 
+## Scientific Linux 7
+
 ### Download ISO 
 
 As a base for most VM templates, Scientific Linux is used. Download the latest version from [http://ftp1.scientificlinux.org/linux/scientific/7x/x86\_64/iso/](http://ftp1.scientificlinux.org/linux/scientific/7x/x86_64/iso/) 
@@ -16,8 +18,12 @@ Set root password \(vagrant\) and create new user \(vagrant:vagrant\)
 
 ### Post-installation script
 
-Log-in as root, and download and execute one of the following script:
+Log-in as root, and execute one of the following script:
 
 1. for non-GUI environment: `bash <(curl -L https://bit.ly/2xDpLwR)`
-2. for GUI environment: `bash <(curl -L https://bit.ly/2ppdfNQ)`
+2. for GUI environment: `bash <(curl -L https://bit.ly/2zrDPLZ)`
+
+## CernVM 4
+
+Download CernVM4 image [https://cernvm.cern.ch/portal/downloads](https://cernvm.cern.ch/portal/downloads) for vagrant.
 

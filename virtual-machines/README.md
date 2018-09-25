@@ -1,6 +1,18 @@
 # Virtual Machines and Containers
 
-The GIT repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://github.com/h2020-westlife-eu/wp6-vm.git) contains various configuration for development and testing purposes. Prerequisites:
+To deploy VF or any other product, the following is recommended. 
+
+* Base virtual machine or container
+  * Scientific Linux 7
+  * CernVM 4
+  * any derivative of RHEL 7 
+* Contextualization into 
+  * binaries - from `/cvmfs/west-life.egi.eu`
+  * sources - from [https://github.com/h2020-westlife-eu](https://github.com/h2020-westlife-eu) 
+
+The GIT repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://github.com/h2020-westlife-eu/wp6-vm.git) contains various configuration for development and testing purposes using vagrant tool to prepare virtual machines in Virtual Box.
+
+### Prerequisites
 
 1. Vagrant - tool for automation of virtual machine deployment. 
    1. For MS Windows - Download and install vagrant from [https://www.vagrantup.com/](https://www.vagrantup.com/)  \(tested on/recommended version vagrant 1.9.6, vagrant 2.0.3 on Windows requires updated Powershell, e.g. via Windows Management Framework WMF 5.1 [https://www.microsoft.com/en-us/download/details.aspx?id=54616](https://www.microsoft.com/en-us/download/details.aspx?id=54616)\) 
@@ -15,7 +27,15 @@ The GIT repository [https://github.com/h2020-westlife-eu/wp6-vm.git](https://git
       1. Ubuntu: `apt install virtualbox`
       2. Centos\(RHEL\): `yum install virtualbox`
 
-## Brief instruction using Vagrant
+### Vagrant Base Boxes
+
+The following base boxes can be used:
+
+* [westlife-eu/scientific\_7\_gui](https://app.vagrantup.com/westlife-eu/boxes/scientific_7_gui) \(~600MB\), minimal SL 7 with basic GUI desktop.
+* [westlife-eu/scientific\_7](https://app.vagrantup.com/westlife-eu/boxes/scientific_7)\(~380MB\), minimal SL 7 box without GUI.
+* [westlife-eu/cernvm4](https://app.vagrantup.com/westlife-eu/boxes/cernvm4)  \(~18MB\), will boot into SL 7. Modified CernVM4 image to boot into GUI.
+
+### Brief instruction using Vagrant
 
 The Vagrant tool configures and bootstraps virtual machine in Virtualbox. Brief instructions are:
 
@@ -118,13 +138,7 @@ export SSO_DEPLOYMENT=1 # will enable integration with West-Life SSO
 export ALLOW_JUPYTER=1 # in case of source code installation, it'll install jupyter notebook and all it's dependencies
 ```
 
-### Base Box
-
-The following base boxes are used:
-
-* [westlife-eu/scientific\_7\_gui](https://app.vagrantup.com/westlife-eu/boxes/scientific_7_gui) \(~600MB\), minimal SL 7 with basic GUI desktop.
-* [westlife-eu/scientific\_7](https://app.vagrantup.com/westlife-eu/boxes/scientific_7)\(~380MB\), minimal SL 7 box without GUI.
-* [westlife-eu/cernvm4](https://app.vagrantup.com/westlife-eu/boxes/cernvm4)  \(~18MB\), after boot it will download additional 200-300 MB. Modified CernVM4 image to boot into GUI.
+### 
 
 ## Usage
 
