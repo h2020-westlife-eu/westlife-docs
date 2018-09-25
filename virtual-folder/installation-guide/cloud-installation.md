@@ -1,20 +1,27 @@
 # Cloud installation
 
-In order to install Virtual Folder in VM or in cloud environment you may use prepared images: 1. [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm) - The standard OVA \(open virtual appliance\) image can be used to deploy West-Life VM into e.g. OpenNebula cloud environment. 2. [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) - RAW image can be used to deploy West-Life VM into OpenStack cloud environment These images contains default contextualization to binary installation of virtual folder in /cvmfs. Both images are small \(18 MB, 23 MB respectively\) containing only CernVM 4 bootloader, which boots into standard Scientific Linux \(currently version 7.3\) and contextualizes it with West-Life specific software:
+In order to install Virtual Folder in VM or in cloud environment you may use prepared images: 
 
-Or you may use any generic image of CernVM 4 or RHEL7 based OS \(Centos 7\) and for binary installation just launch script at `/cvmfs/west-life.egi.eu/software/virtualfolder/latest/bootstrap/bootstrapcloud.sh`. For installation from source codes, launch
+1. [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm) - The standard OVA \(open virtual appliance\) image can be used to deploy West-Life VM into e.g. OpenNebula cloud environment. 
 
-```bash
-#!/usr/bin/env bash
-mkdir -p /opt/virtualfolder-src
-cd /opt/virtualfolder-src
-git clone https://github.com/h2020-westlife-eu/west-life-wp6.git
-export WP6SRC=/opt/virtualfolder-src/west-life-wp6/wp6-virtualfolder
-export PORTAL_DEPLOYMENT=0  # 1 =enable VRE - multiuser environment
-export SSO_DEPLOYMENT=0 # 1 =enable SSO -multiuser environment
-chown -R vagrant:vagrant $WP6SRC
-$WP6SRC/bootstrap/bootstrap.sh
-```
+2. [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm) - RAW image can be used to deploy West-Life VM into OpenStack cloud environment These images contains default contextualization to binary installation of virtual folder in /cvmfs. Both images are small \(18 MB, 23 MB respectively\) containing only CernVM 4 bootloader, which boots into standard Scientific Linux \(currently version 7.3\) and contextualizes it with West-Life specific software.
+
+3. Any generic image of based on RHEL 7, \(e.g. CernVM 4, Centos 7,...\)
+
+* for binary installation launch the following `/cvmfs/west-life.egi.eu/software/virtualfolder/latest/bootstrap/bootstrapcloud.sh` 
+* for source code installation launch the following script
+
+  ```bash
+  #!/usr/bin/env bash
+  mkdir -p /opt/virtualfolder-src
+  cd /opt/virtualfolder-src
+  git clone https://github.com/h2020-westlife-eu/west-life-wp6.git
+  export WP6SRC=/opt/virtualfolder-src/west-life-wp6/wp6-virtualfolder
+  export PORTAL_DEPLOYMENT=0  # 1 =enable VRE - multiuser environment
+  export SSO_DEPLOYMENT=0 # 1 =enable SSO -multiuser environment
+  chown -R vagrant:vagrant $WP6SRC
+  $WP6SRC/bootstrap/bootstrap.sh
+  ```
 
 ## Downloading VM image
 
