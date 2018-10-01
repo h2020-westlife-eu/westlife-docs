@@ -1,5 +1,7 @@
 # Preparing vagrant VM template
 
+The following section describes how to prepare VM template from scratch, e.g. to be used as base vagrant box or as a base VM template. It's not needed to perform these steps when installing any products, however, might be usefull to maintain version of base OS.
+
 ## Scientific Linux 7
 
 ### Download ISO 
