@@ -7,7 +7,7 @@ External registration is needed with West-Life SSO and ARIA for integrating sing
 Log in into the server as root and do following:
 
 ```bash
-git clone https://github.com/h2020-westlife-eu/wp6-repository.git
+git clone 
 cd wp6-repository
 bootstrap.sh
 ```

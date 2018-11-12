@@ -2,7 +2,7 @@
 
 ## Introduction
 
-"Virtual Folder" provides a unified access mechanism to files stored in a variety of locations including the local file system, and B2DROP and other cloud storage facilities. It is developed in work package WP6 by the [West-Life H2020 project](https://west-life.eu), which is running from 2015 to 2018. It provides application level services usable for structural biology use cases and follows [the structural biology data lifecycle](http://internal-wiki.west-life.eu/w/images/9/9c/Assessment_of_the_life_cycle_of_structural_data_and_comparison_with_other_scientific_data.docx). Data management work package WP6 build on existing infrastructure for storing and accessing data to create a "Virtual Folder". 
+"Virtual Folder" provides a unified access mechanism to files stored in a variety of locations including the local file system, and B2DROP and other cloud storage facilities. It is developed in work package WP6 by the [West-Life H2020 project](https://west-life.eu), which is running from 2015 to 2018. It provides application level services usable for structural biology use cases and follows [the structural biology data lifecycle](http://internal-wiki.west-life.eu/w/images/9/9c/Assessment_of_the_life_cycle_of_structural_data_and_comparison_with_other_scientific_data.docx). Data management work package WP6 build on existing infrastructure for storing and accessing data to create a "Virtual Folder".
 
 ## Usage
 
@@ -43,9 +43,21 @@ Follow [Integration guide](integration-guide/) for further details.
 
 ## Development
 
-In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Virtual Machines](../virtual-machines.md) chapter. 
+In order to test, contribute to source codes and prepare virtual machine environment with source codes, follow [Virtual Machines](../virtual-machines/) chapter.
 
 ## Release Notes
+
+* 21/06/2018 - new features: Import Settings from another Virtual Folder instance, 
+
+  integration with West-Life SSO, 
+
+  generate obfuscated public webdav URL in order to prevent full path disclosure,
+
+  added Jupyter notebook option to start instance on local deployment
+
+  updated features: UI - basic UI as SPA with router navigation \(\#/setting \#/filemanager\), updated angular.js 1.6.10 used by EBI PDB components.
+
+  Backend installation into standard linux paths - shared data at /srv/virtualfolder/, database at /var/lib/westlife/, configuration /etc/westlife/, logs /var/log/westlife/  
 
 * 14/05/2018 - update docs to new gitbook system - no PDF, updated links.
 * 01/04/2018 - docs moved to westlife-docs repository, docs covering Virtual Folder, Virtual Machines and Repository

@@ -6,5 +6,5 @@ There are 3 options
 
 * [Cloud installation](cloud-installation.md) - to install in OpenNebula, OpenStack or any other cloud computing provider.
 * [Local installation](local-installation.md) - using Virtual Box on local workstation or cluster for testing purposes or for private deployment.
-* [Development installation](../../virtual-machines.md) - same as "Local installation", but contains source code of Virtual Folder. This is covered in separate section "Virtual Machines"
+* [Development installation](../../virtual-machines/) - same as "Local installation", but contains source code of Virtual Folder. This is covered in separate section "[Virtual Machines](../../virtual-machines/)"
 

@@ -1,6 +1,6 @@
 # Dataset metadata and API
 
-{% api-method method="get" host="https://\[virtual folder server\]" path="/metadataservice/dataset/{id}" %}
+{% api-method method="get" host="https://\[virtual folder server\]" path="/virtualfolder/api/dataset/{id}" %}
 {% api-method-summary %}
 Get dataset
 {% endapi-method-summary %}
@@ -13,7 +13,7 @@ Gets list of all datasets published by user or detail of dataset if "id" is spec
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="id" type="string" %}
-ID of the cake to get, for free of course.
+ID of the dataset
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -25,7 +25,7 @@ Cake successfully retrieved.
 {% endapi-method-response-example-description %}
 
 ```javascript
-{"Id"": 1,"Name":"dataset 1","Entries":[{"Id":1,"Type":"pdb_id","Name":"2hhd"}]}
+{"Id":6,"Owner":"vagrant","Name":"vagrant/filesystem/patient_data/data","Entries":[],"Metadata":"{}","Provenance":"document    \n    prefix virtualfolder <https://portal.west-life.eu/virtualfolder/>\n    prefix datafile <http://localhost:8081/webdav/vagrant/filesystem/patient_data/data/> \n\n    prefix westlife <https://about.west-life.eu/>\n    prefix thisvf <http://localhost:8081/virtualfolder/#/filemanager>\n    prefix user <>\n    entity (datafile:, [prov:label=\"data\", prov:type=\"document\"]) \n    \n    agent (user:vagrant, [ prov:type=\"prov:Person\" ]) \n    wasAttributedTo(datafile:, user:vagrant) \nendDocument"}
 ```
 {% endapi-method-response-example %}
 

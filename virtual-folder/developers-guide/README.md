@@ -1,79 +1,29 @@
 # Developer's guide
 
-In order to have complete development environment follow either \[Development installation\]. Or just get source codes from [https://github.com/h2020-westlife-eu/west-life-wp6](https://github.com/h2020-westlife-eu/west-life-wp6)
+Get source codes directly from [github.com/h2020-westlife-eu/virtualfolder](https://github.com/h2020-westlife-eu/virtualfolder), or use option to install virtual machine from source codes described at [Virtual Machines](https://github.com/h2020-westlife-eu/westlife-docs/tree/31f6e2b90206a4d8962f5f78ea55add47fab55cd/virtual_machines.md).
 
-## Git secrets
-
-Within the public git repository, there are secrets to be used for demonstration purposes, these are encrypted using git-secret module.
-
-Git-secret is installed within \[wp6-vm/rep-standalone-src-sl7\]. To manually install git-secret in different environment, launch
+## Source code structure
 
 ```text
-# git-secret require git version 2.0
-yum -y install http://opensource.wandisco.com/centos/6/git/x86_64/wandisco-git-release-6-1.noarch.rpm
-yum -y install git 
-# install git-secret
-wget https://bintray.com/sobolevn/rpm/rpm -O bintray-sobolevn-rpm.repo
-mv bintray-sobolevn-rpm.repo /etc/yum.repos.d/
-yum -y install git-secret
+/vmcontext          # helper configuration and scripts for virtual machines creation         
+/wp6-virtualfolder  # source code for virtual folder
+LICENSE             # license
+README.md           # brieaf installation instructions
+RELEASE.md          # instruction to make release
+Vagrantfile         # vagrant configuration to prepare VM
+bootstrap.sh        # bootstrap script, will install VF in clean VM
 ```
 
-Further details see [http://git-secret.io/](http://git-secret.io/)
-
-New user:
+The source code of VF components in `/wp6-virtualfolder` are
 
 ```text
-#user needs a new gpg key pair, create
-gpg2 --gen-key
-
-#within his copy of git, replaces [mygpg@email.com] with your key alias
-git secret tell [mygpg@email.com]
-
-# git commit & git push
-```
-
-Trusted user:
-
-```text
-# git pull
-# reveal all secret file
-git secret reveal
-# encrypt with all keys including the new one
-git secret hide
-# git commit & git push
-```
-
-New user:
-
-```text
-# git pull
-# now reveal all secrets
-git secret reveal
-```
-
-Cheat sheet:
-
-```text
-# make sure you have gpg key pairs - to generate new
-gpg2 --gen-key
-
-# initialize - usually done once in git repository
-git secret init
-
-# add user among trusted users
-git secret tell -m
-# or
-git secret tell mygpg@email.comg
-
-# add file to the secrets
-echo 'myfile.txt' >>.gitignore
-git secret add myfile
-
-# encrypt all secreted file
-git secret hide
-
-# decrypt all secreted file using trusted user's key
-git secret reveal
+/bootstrap          # various bootstrap scripts for components
+/conf-template      # default templates for linux configuration files
+/scipion            # minor ammendments for scipion installation inside local VF VM
+/scripts            # bash scripts used by components of VF
+/singlevre/api      # static proxy of vre component in single user environment
+/src/WP6Service2    # backend in C# (.NET and ServiceStack) of metadataservice
+/www                # frontend in HTML and Javascript (ECMAScript 6 and Aurelia)
 ```
 
 ## Remove unwanted commits from git tree

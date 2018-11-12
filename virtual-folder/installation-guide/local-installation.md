@@ -1,26 +1,36 @@
 # Local installation
 
-In order to install/launch legacy software and have access to a desktop you may install the virtual folder with selected software suites either on your cloud provider, or locally on your server, cluster, workstation or even laptop.
+It's possible to test the virtual folder locally, there are these options:
 
-The standard procedure is to download virtual machine template image from appDB \(18MB\). If you would like to have testing environment set by Vagrant tool and VirtualBox, follow [Virtual Machines](../../virtual-machines.md) chapter.
+1. \(requirements VirtualBox\). 
 
-## Downloading VM image
+   Download the VM template for Open Nebula and import it into your private instance of VirtualBox.
 
-You may download the latest West-life VM in the OVA compatible format from
+2. \(requirements VirtualBox + Vagrant tool\)
+
+## Using VM template for OpenNebula
+
+Download the latest West-life VM in the OVA compatible format from
 
 [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm)
 
 ![](../../.gitbook/assets/downloadappdb.gif)
 
-Alternatively you may use the RAW image for deployment into OpenStack at [https://appdb.egi.eu/store/vappliance/west.life.vm](https://appdb.egi.eu/store/vappliance/west.life.vm)
+Import the downloaded image into VirtualBox.
 
-### Deployment to local VirtualBox
+![](../../.gitbook/assets/importvm2.gif) The size of OVA image is very small \(18 MB\) as it contains only micro kernel of CernVM 4. It bootstraps the rest of operating system \(based on Scientific Linux 7\) and additional software from Internet. It may download about 100-200 MB during initial boot, and it can take about several minutes.
 
-For testing purposes you may import the image into local installation of VirtualBox.
+Desktop of VM is accessible via VirtualBox tool. ![](../../.gitbook/assets/vmdesktop.gif)
 
-![](../../.gitbook/assets/importvm2.gif)
+## Using Vagrant tool and VirtualBox
 
-The OVA image initially 18 MB bootstraps operating system and additional software by downloadin about 100-200 MB, the initial bootstrap can take about several minutes. You can access the desktop directly.
+You need Vagrant tool [www.vagrantup.com](https://www.vagrantup.com/) and VirtualBox [www.virtualbox.org](https://www.virtualbox.org/). And use binary installation based on CernVM4 OS.
 
-![](../../.gitbook/assets/vmdesktop.gif)
+```bash
+git clone https://github.com/h2020-westlife-eu/wp6-vm.git
+cd wp6-vm/vf-standalone-bin/
+vagrant up
+```
+
+For full options available for local installation, see [Virtual Machines](../../virtual-machines/)
 

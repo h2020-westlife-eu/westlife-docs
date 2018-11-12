@@ -1,21 +1,50 @@
 # Backend
 
-## Backend
+Backend components consist of metadataservice \(C\# .NET\), Bash scripts and configuration files.
 
-Backend components consist of metadataservice \(C\# .NET\), common portal \(Python, Django\) and Bash scripts and configuration files.
+`/var/lib/westlife/metadata.sqlite` SQLite DB is used to store metadata about user, datasets and tasks.
 
-## Database configuration
+`/etc/westlife/` contains configuration of VF. Note that some user's specific entities are encrypted thus configuration should be moved together with database file in order to preserve user's metadata of connected data storage.
 
-`/home/vagrant/.westlife` contains database configuration and key to access secured content. In order to backup or move configuration, it needs to be moved together.
+`/opt/virtualfolder/MetadataService` contains binaries build from source code. Otherwise the binaries are taken from `/cvmfs/west-life.egi.eu/software/virtualfolder`.
 
-## Release Notes
+## Metadata service
 
-* 25/11/2016 - Updated vagrant boxes to use uCernVM 2.7.7 bootloader, updated OVA images in [https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm/vaversion/latest](https://appdb.egi.eu/store/vappliance/d6.1.virtualfoldervm/vaversion/latest) and vagrant boxes, do "vagrant box update", bug fixes, consolidated initial web page and design, fixed/added background services
-* 26/10/2016 - moved VagrantFile to new repository [https://github.com/h2020-westlife-eu/wp6-vm](https://github.com/h2020-westlife-eu/wp6-vm), updated base box with uCernVM2.7.4 bootloader for CernVM 4 fixes security bug 'dirty COW' and aufs bug in kernel, [https://atlas.hashicorp.com/westlife-eu](https://atlas.hashicorp.com/westlife-eu), 
-  * tested on Windows 7 64 bit, vagrant 1.8.6 + VirtualBox 5.1.6, vagrant 1.8.1, 1.8.4, VirtualBox 5.0.26, note vagrant &lt; 1.8.6 requires VirtualBox 5.0.x, doesn't require VirtualBox extension pack, download from [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_0](https://www.virtualbox.org/wiki/Download_Old_Builds_5_0) 
-  * tested on Ubuntu 14.04 LTS, \(default vagrant 1.4.3 needs to be updated to 1.8.6\), default VirtualBox 4.3.36 works
+Provides REST api for frontend and client. It is `systemd` daemon configured in `/etc/systemd/system/westlife-metadata.service` source codes at `conf-template/etc/systemd/system/westlife-metadata.service`.
+
+It's possible to ammend these environment variables
+
+```bash
+/etc/systemd/system/westlife-metadata.service
+...
+[Service]
+# location of VRE api, if present
+Environment=VF_VRE_API_URL=http://localhost/api/ 
+# filesystem location where user's virtual folders are mounted 
+Environment=VF_STORAGE_DIR=/srv/virtualfolder/    
+# location of scripts where virtualfolder is installed, 
+# mountb2drop and other scripts should be present
+Environment=VF_SCRIPTS_DIR=/opt/virtualfolder/scripts
+# true - allows filesystem provider (access to VM, 
+# recommended for single deployment), false - default  
+Environment=VF_ALLOW_FILESYSTEM=true
+# true - enables testing modules              
+Environment=VF_ALLOW_MODULES=true                
+# true - enables Jupyter LAB task, it allows to execute user's script on VM
+# recommended for private deployment for trusted users
+Environment=VF_ALLOW_LAB=true                    
+# true -enables Jupyter notebook tast, it allows to execute user's script on VM
+# recommended for private deployment for trusted users
+Environment=VF_ALLOW_NOTEBOOK=true               
+# location of database file for metadata
+Environment=VF_DATABASE_FILE=/var/lib/westlife/metadata.sqlite
+# configuration file with other environment variables, keys, etc. 
+EnvironmentFile=/etc/westlife/metadata.key
+```
+
+Log files are by default at `/var/log/westlife` directory.
 
 ## Further doc
 
-[http://internal-wiki.west-life.eu/w/index.php?title=D6.1](http://internal-wiki.west-life.eu/w/index.php?title=D6.1)
+[http://internal-wiki.west-life.eu/index.php?title=D6.1](http://internal-wiki.west-life.eu/index.php?title=D6.1)
 
