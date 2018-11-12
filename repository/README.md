@@ -1,6 +1,26 @@
 # Repository
 
-Reference implementation of a repository that supplies suitable metadata to the portal. This is developed within work package WP6 by the [West-Life H2020 project](https://west-life.eu) running from 2015 to 2018. It provides application level services usable for structural biology use cases and follows [the structural biology data lifecycle](http://internal-wiki.west-life.eu/w/images/9/9c/Assessment_of_the_life_cycle_of_structural_data_and_comparison_with_other_scientific_data.docx).
+This is reference implementation of a repository that supplies suitable metadata to the portal. 
 
-Data management work package WP6 build on existing infrastructure for storing and accessing data. Full documentation is rendered in [HTML docs](https://h2020-westlife-eu.gitbooks.io/virtual-folder-docs/content/) or [PDF docs](https://www.gitbook.com/download/pdf/book/h2020-westlife-eu/virtual-folder-docs)
+Main features of this repository implementation is that it:
+- Scientist are authenticated by West-Life single-sign-on - authentication of users to this repository is made by public web service
+- it's possible to authorize or restrict access to users authenticated by West-Life SSO to gain access to this repository 
+- supports Instruct ARIA workflow, facility reservation system, scheduling and managing visit to tackle experiment - Repository installation can obtain user's registered project and bind them to dataset.
+- Facility Staff are authenticated by repository itself by separated staff account management.    
+
+## Installation
+
+Installation can be made on physical server launching bootstrap.sh script - supported on RHEL 7 derivative. Tested on Scientific Linux 7 and Centos 7 systems.
+Further details at [Installation Guide](installation-guide/README.md)
+
+## Developer's Guide
+
+There are described some non-standard integration steps with ARIA API,made in this implementation. 
+Read further details at [Developers-guide](developers-guide/README.md)
+
+## History 
+
+Initial version was developed within work package WP6 by the [West-Life H2020 project](https://west-life.eu) running from 2015 to 2018.
+
+ 
 
