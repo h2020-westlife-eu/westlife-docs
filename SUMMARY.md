@@ -36,7 +36,10 @@
     * [Prerequisites](repository/installation-guide/prerequisites.md)
     * [Automatic installation](repository/installation-guide/automatic-installation.md)
     * [Manual installation from source codes](repository/installation-guide/manual-installation-from-source-codes.md)
-  * [User's guide](repository/users-guide.md)
+  * [User's guide](repository/users-guide/README.md)
+    * [Scientist imports project proposal](repository/users-guide/scientist-imports-project-proposal.md)
+    * [Staff uploads data](repository/users-guide/staff-uploads-data.md)
+    * [Scientist works with dataset](repository/users-guide/scientist-works-with-dataset.md)
   * [Developer's guide](repository/developers-guide/README.md)
     * [ARIA integration](repository/developers-guide/aria-integration.md)
 

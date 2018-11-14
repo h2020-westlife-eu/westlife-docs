@@ -6,5 +6,3 @@ This guide contains information, how to install Repository into various environm
 * To prepare development/testing environment using local VirtualBox and Vagrant tool, follow [Automatic Installation](automatic-installation.md).
 * To prepare production environment in public domain, follow [Manual installation](manual-installation-from-source-codes.md).
 
-
-
