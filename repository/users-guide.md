@@ -1,6 +1,7 @@
 # User's guide
 
 The repository implementation covers the following main use cases for
+
 Scientist:
 - Project proposal import from INSTRUCT ARIA database.
 - Dataset download from Repository to Virtual Folder.
