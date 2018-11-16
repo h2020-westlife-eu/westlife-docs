@@ -7,6 +7,7 @@ A scientist visits facility based on previous project proposal submission. Scien
 3. * redirected to ARIA - Login and click "Allow ACCESS" 
 4. Select available proposals and click "Import proposal"
 
-   ![](../../.gitbook/assets/scientistimportproject.gif)
 
+
+![](../../.gitbook/assets/scientistimportproject.gif)
 

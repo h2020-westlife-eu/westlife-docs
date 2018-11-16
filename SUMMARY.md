@@ -41,5 +41,6 @@
     * [Staff uploads data](repository/users-guide/staff-uploads-data.md)
     * [Scientist works with dataset](repository/users-guide/scientist-works-with-dataset.md)
   * [Developer's guide](repository/developers-guide/README.md)
+    * [Metadata generation](repository/developers-guide/metadata-generation.md)
     * [ARIA integration](repository/developers-guide/aria-integration.md)
 

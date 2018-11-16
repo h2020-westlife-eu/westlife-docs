@@ -7,5 +7,7 @@ A scientist can browse data in dataset, generate and view metadata, upload datas
 3. browse available files. Each click on file will show header of the file
 4. icons next to dataset allow to generate and view metadata, download dataset, upload to Virtual Folder or delete the dataset.
 
-   ![](../../.gitbook/assets/scientistbrowsedata.gif)
+
+
+![](../../.gitbook/assets/scientistbrowsedata.gif)
 
