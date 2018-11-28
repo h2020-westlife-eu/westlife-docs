@@ -5,7 +5,8 @@ The repository web UI covers the following main use cases for
 Scientist \(logged via West-Life SSO\):
 
 * Project proposal import from INSTRUCT ARIA database [Scientist imports](scientist-imports-project-proposal.md).
-* Browse dataset files, generate/view metadata, download files, upload from Repository to Virtual Folder. [Scientist works](scientist-works-with-dataset.md)
+* Browse dataset files,  download files, upload from Repository to Virtual Folder. [Scientist works](scientist-works-with-dataset.md)
+* generate/view metadata. [Scientist metadata](metadata.md)
 
 for Facility Staff \(logged via internal authentication system\):
 

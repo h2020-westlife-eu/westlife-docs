@@ -19,5 +19,5 @@ There are described some non-standard integration steps with ARIA API,made in th
 
 ## History
 
-Initial version was developed within work package WP6 by the [West-Life H2020 project](https://west-life.eu) running from 2015 to 2018.
-
+- 18.04 - Initial version was developed within work package WP6 by the [West-Life H2020 project](https://west-life.eu) running from 2015 to 2018.
+- 18.11 - This release contains new features for metadata generation and view and some minor security updates.
