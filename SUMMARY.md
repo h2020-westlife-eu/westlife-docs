@@ -14,6 +14,7 @@
   * [Installation guide](virtual-folder/installation-guide/README.md)
     * [Cloud installation](virtual-folder/installation-guide/cloud-installation.md)
     * [Local installation](virtual-folder/installation-guide/local-installation.md)
+    * [Integration with SSO](virtual-folder/installation-guide/integration-sso.md)
   * [Integration guide](virtual-folder/integration-guide/README.md)
     * [Select File or Dir from Virtual Folder](virtual-folder/integration-guide/select-file-or-dir-from-virtual-folder.md)
     * [Working with WEBDAV](virtual-folder/integration-guide/working-with-webdav.md)
