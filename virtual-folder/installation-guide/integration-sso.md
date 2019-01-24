@@ -1,6 +1,6 @@
 # Integration with SSO
 
-In order to integrate with West-Life SSO, you need your `sp-metadata,idp-metadata,sp_key`and`sp_cert` files.
+By default, VF works in single user environment as user 'vagrant'. To enable multiuser environment, you need to integrate it with West-Life SSO. VF instance have unique `sp-metadata,idp-metadata,sp_key`and`sp_cert` files.
 
 * If you have it from previous installation, then put it next to the VagrantFile, or put them into virtual machine/container folder `/vagrant` and exectue this script in bash within VF machine or container:
 ```bash
