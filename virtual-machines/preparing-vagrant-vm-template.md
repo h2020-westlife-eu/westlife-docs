@@ -20,6 +20,8 @@ Set root password \(vagrant\) and create new user \(vagrant:vagrant\)
 
 ### Post-installation script
 
+In Virtualbox - Insert VBoxGuest Additions `Devices -> Insert Guest Additions CD image ...`.
+
 Log-in as root, and execute one of the following script:
 
 1. for non-GUI environment: `bash <(curl -L https://bit.ly/2xDpLwR)`
