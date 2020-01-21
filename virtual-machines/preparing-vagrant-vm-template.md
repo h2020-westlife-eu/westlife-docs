@@ -27,9 +27,22 @@ Log-in as root, and execute one of the following script:
 1. for non-GUI environment: `bash <(curl -L https://bit.ly/2xDpLwR)`
 2. for GUI environment: `bash <(curl -L http://bit.ly/2GfrE7z)`
 
-### Create box
+Reset, check if everything works, if new kernel was installed - then manually uninstall old kernel
+```
+uname -a
+# outputs which kernel is loaded
+rpm -q kernel
+# outputs which kernel is installed
+yum remove kernel-...
+# uninstalls unused kernel
+bash <(curl -L ....)
+#repeat post-install script 1. for non-GUI or 2. GUI
+```
 
-launch vagrant script to package box. Expecting the virtual machine name is `my-sl7-virtualmachine`
+### Create box
+Stop virtualbox, remove unused IDE, sound card, change video memory etc.
+
+Launch vagrant script to package box. Expecting the virtual machine name is `my-sl7-virtualmachine`
 
 ```text
 vagrant package --output sl7mini.box --base my-sl7-virtualmachine
