@@ -23,7 +23,7 @@ Set root password \(vagrant\) and create new user \(vagrant:vagrant\)
 Log-in as root, and execute one of the following script:
 
 1. for non-GUI environment: `bash <(curl -L https://bit.ly/2xDpLwR)`
-2. for GUI environment: `bash <(curl -L https://bit.ly/2zrDPLZ)`
+2. for GUI environment: `bash <(curl -L http://bit.ly/2GfrE7z)`
 
 ### Create box
 
